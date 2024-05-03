@@ -45,7 +45,7 @@ const View = () => {
     }
   });
 
-  if (!mainImage) return <Loader />;
+  if (cottage.isLoading) return <Loader />;
 
   return (
     <>
@@ -54,6 +54,7 @@ const View = () => {
         <meta name="description" content="single cottage page" />
         <link rel="canonical" href="/view" />
       </Helmet>
+
       <div className="viewWrapper">
         <div className="container">
           <BreacdCrumbs />
