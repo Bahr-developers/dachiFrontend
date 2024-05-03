@@ -1,7 +1,6 @@
 .swiper-header {
   width: 100%;
   height: 80vh !important;
-  display: none;
   z-index: -9;
 }
 
@@ -214,7 +213,7 @@
     text-align: center;
     z-index: 0;
   }
-  .header-menu{
+  .header-menu {
     display: none;
   }
   .modal-filter {
@@ -427,7 +426,7 @@
     text-align: center;
     z-index: 0;
   }
-  .header-menu{
+  .header-menu {
     display: none;
   }
   .header-btn {
