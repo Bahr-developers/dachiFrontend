@@ -89,7 +89,7 @@ const Header = () => {
                         <h2 className="oswald header-num">${el.price}</h2>
                         <Link
                           to={`/home/view/${el.id}`}
-                          className="header-btn oswald"
+                          className="header-btn"
                         >
                           {HeaderLang[languageChange].btn}
                         </Link>
@@ -172,23 +172,22 @@ const Header = () => {
         </button>
 
         <div className={showModal ? "modal-filter" : "close-filter"}>
-          <div className="modal-header-search d-flex justify-content-between align-items-center ">
-            <h5 className="modal-title" id="staticBackdropSearchLabel">
+          <div className="modal-header-search mb-2 position-relative ">
+            <h5 className="modal-title px-2 p-1 text-start" id="staticBackdropSearchLabel">
               Filter
             </h5>
             <button
               style={{ backgroundColor: "inherit" }}
-              className="border-0 text-light "
+              className="border-0 text-light px-2 position-absolute top-0 end-0"
               onClick={() => setShowModal(false)}
             >
-              <IoCloseSharp size={30} />
+              <IoCloseSharp size={23} />
             </button>
           </div>
-          <hr />
-          <form className="" onSubmit={handleFilterCottage}>
+          <form className="px-3" onSubmit={handleFilterCottage}>
             <div className="header-inner-mini">
               <div className="header-inner-box-mini">
-                <p className="header-top-mini">{FilterLeng[languageChange].place}</p>
+                <p className="header-top-mini">{FilterLeng[languageChange].place}: </p>
                 <select className="header-select-one" name="place" id="place">
                   {place?.length &&
                     place.map((el) => {
@@ -201,7 +200,7 @@ const Header = () => {
                 </select>
               </div>
               <div className="header-inner-box-mini">
-                <p className="header-top-mini">{FilterLeng[languageChange].tip}</p>
+                <p className="header-top-mini">{FilterLeng[languageChange].tip}: </p>
                 <select className="header-select-two" name="type" id="dacha">
                   {cottageType?.length &&
                     cottageType.map((el) => {
@@ -213,18 +212,19 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="header-inner-box-mini">
-                <p className="header-top-usd">
-                  {FilterLeng[languageChange].price}
-                </p>
-                <input
-                  className="header-nums"
-                  type="number"
-                  name="price"
-                  placeholder="400$"
-                />
-              </div>
-              <button
+              <div className="d-flex position-relative align-items-start justify-content-between ">
+                <div className="header-inner-box-mini">
+                  <p className="header-top-usd">
+                    {FilterLeng[languageChange].price}: 
+                  </p>
+                  <input
+                    className="header-nums"
+                    type="number"
+                    name="price"
+                    placeholder="400$"
+                  />
+                </div> 
+                <button
                   onClick={() => setShowModal(false)}
                   type="submit"
                   className="header-search btn bg-success rounded-pill p-2 border-0 border-0 "
@@ -244,7 +244,8 @@ const Header = () => {
                     alt="search"
                   />
                 </button>
-            </div>            
+              </div>             
+            </div>                       
           </form>
         </div>
       </header>

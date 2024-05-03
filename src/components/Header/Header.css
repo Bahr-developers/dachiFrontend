@@ -122,6 +122,7 @@
   color: #ffffff;
 }
 .header-select-one {
+  height: 25px;
   margin: 0;
   padding: 0;
   display: block;
@@ -131,6 +132,7 @@
   background-color: #2c2d2e;
 }
 .header-select-two {
+  height: 25px;
   margin: 0;
   padding: 0;
   display: block;
@@ -200,6 +202,7 @@
   .info-card {
     position: absolute;
     padding: 60px 0 0 0;
+    text-align: center;
     margin: 0 auto;
     width: inherit;
     top: -50px;
@@ -213,21 +216,38 @@
     transition: all 0.8s ease-in-out;
     color: white;
     position: relative;
-    height: 300px;
-    padding: 15px 20px !important;
+    height: 150px;
     border-radius: 8px;
-    top: -250px;
-    background: #434242ea;
-    width: 95%;
+    top: -200px;
+    background: #434242f7;
+    width: 90%;
     margin: 0 auto;
     z-index: 30;
-    padding: 10px 0;
+    padding: 0px 0;
   }
   .close-filter {
     display: block;
-    height: 0px;
     opacity: 0;
   }  
+
+  .header-inner-mini {
+    display: block;
+  }
+  .header-inner-box-mini {
+    height: 25px;
+    margin: 0 0 5px 0;
+    padding: 0;
+    display: flex;
+    align-items: end;
+    column-gap: 20px;
+    /* border-right: none;
+    border-bottom: 1px solid #ffffff; */
+  }
+
+  .header-inner-box:last-child {
+    border-bottom: 1px solid #ffffff;
+  }
+
   .mini-search-icon {
     display: block;
     position: absolute;
@@ -245,7 +265,7 @@
     display: inline-block;
     padding: 8px 25px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     line-height: 20px;
     color: #ffffff;
@@ -265,13 +285,14 @@
   }
 
   .header-num {
-    margin: 10px 0 24px;
+    margin: 10px auto 24px;
     padding: 0;
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
     line-height: 24px;
     color: #ffffff;
+    width: 50px;
   }
 
   .header-btn {
@@ -286,26 +307,10 @@
     background: #3cd298;
     border-radius: 18px;
     border: none;
-  }
-  .header-inner-mini {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-  }
-  .header-inner-box {
-    margin: 0 0 24px 0;
-    padding: 0;
-    border-right: none;
-    border-bottom: 1px solid #ffffff;
-  }
+  }  
 
-  .header-inner-box:last-child {
-    border-bottom: 1px solid #ffffff;
-  }
-
-  .header-top {
-    margin: 0;
-    padding: 0;
+  .header-top-mini {
+    margin-top: 5px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -319,7 +324,7 @@
     display: block;
     border: none;
     color: #ffffff;
-    background-color: inherit;
+    background-color: #43424296;
   }
 
   .header-select-two {
@@ -329,10 +334,13 @@
     display: block;
     border: none;
     color: #ffffff;
-    background-color: inherit;
+    background-color: #434242ab;
   }
 
   .header-nums {
+    margin: 5px 0 0 0;
+    padding: 0;
+    height: 20px !important;
     display: block;
     left: 0;
     margin: 12px 0;
@@ -369,158 +377,25 @@
 @media only screen and (max-width: 414px) {
   .info-card {
     position: absolute;
-    padding: 90px 0 0 0;
+    padding: 70px 0 0 0;
     margin: 0 auto;
     width: inherit;
     top: -50px;
     left: 0px;
     z-index: 30;
   }
-  .header-text {
-    margin: 0;
-    padding: 0;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
-    color: #ffffff;
-    margin-bottom: 7px;
-  }
-
-  .header-num {
-    margin: 10px 0 24px;
-    padding: 0;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    color: #ffffff;
-  }
-
-  .header-btn {
-    margin: 0;
-    display: inline-block;
-    padding: 8px 25px;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-    color: #ffffff;
-    background: #3cd298;
-    border-radius: 18px;
-    border: none;
-  }
 }
 
 @media only screen and (max-width: 390px) {
-  .header-text {
-    margin: -20px 0;
-    padding: 0;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
-    color: #ffffff;
-    margin-bottom: 7px;
+  .info-card {
+    position: absolute;
+    padding: 70px 0 0 0;
+    margin: 0 auto;
+    width: inherit;
+    top: -50px;
+    left: 0px;
+    z-index: 30;
   }
-
-  .header-num {
-    margin: 12px 0 24px;
-    padding: 0;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    color: #ffffff;
-  }
-
-  .header-btn {
-    margin: 0;
-    display: inline-block;
-    padding: 8px 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-    color: #ffffff;
-    background: #3cd298;
-    border-radius: 18px;
-    border: none;
-  }
-  .circles {
-    margin: 48px 0 76px;
-    padding: 0;
-    display: none;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .circles-next {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-  .header-inner {
-    display: block;
-  }
-  .header-inner-box {
-    margin: 0 0 24px 0;
-    padding: 0;
-    border-right: none;
-    border-bottom: 1px solid #ffffff;
-  }
-  .header-inner-box:last-child {
-    border-bottom: 1px solid #ffffff;
-  }
-
-  .header-top {
-    margin: 0;
-    padding: 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #ffffff;
-  }
-
-  .header-select-one {
-    width: 91px;
-    margin: 12px 0;
-    padding: 0;
-    display: block;
-    border: none;
-    color: #ffffff;
-    background-color: inherit;
-  }
-
-  .header-select-two {
-    width: 69px;
-    margin: 12px 0;
-    padding: 0;
-    display: block;
-    border: none;
-    color: #ffffff;
-    background-color: inherit;
-  }
-  .header-search {
-    margin-bottom: -420px;
-    padding: 16px 17px 17.03px 16px;
-    border-radius: 50px;
-    background: #3cd298;
-  }
-  .header-nums {
-    display: block;
-    left: 0;
-    margin: 12px 0;
-    padding: 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 28px;
-    color: #ffffff;
-    background-color: inherit;
-  }
-
   .search-img {
     display: none;
   }
