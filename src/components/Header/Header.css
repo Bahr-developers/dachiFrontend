@@ -9,7 +9,6 @@
 .swiper-header {
   width: 100%;
   height: 80vh !important;
-  display: none;
   z-index: -9;
 }
 .swiper-slide-header{
@@ -210,6 +209,9 @@
     z-index: 30;
   }
   .header-menu{
+
+  .header-menu {
+
     display: none;
   }
   .modal-filter {
@@ -240,8 +242,6 @@
     display: flex;
     align-items: end;
     column-gap: 20px;
-    /* border-right: none;
-    border-bottom: 1px solid #ffffff; */
   }
 
   .header-inner-box:last-child {
