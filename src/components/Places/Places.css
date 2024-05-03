@@ -37,6 +37,7 @@
 .swiper-wrapper {
   width: 100%;
 }
+
 .prevPlace {
   position: absolute;
   cursor: pointer;
@@ -45,6 +46,7 @@
   font-size: 50px;
   display: inline-block;
 }
+
 .nextPlace {
   position: absolute;
   top: 150px;
