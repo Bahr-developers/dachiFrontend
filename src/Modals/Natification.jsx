@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 function Natification() {
   const querClient = useQueryClient();
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
-  const location = useLocation()
+  const location = useLocation();
   const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
 
   const notifications = notification?.filter((notif) => notif.status === "new");
@@ -43,10 +43,16 @@ function Natification() {
       <button
         className="btn notificationsBtn"
         data-bs-toggle="modal"
-        style={location?.pathname==="/"?{marginRight: "20px"}:{}}
         data-bs-target="#staticBackdrop"
       >
-        <div className="bell">
+        <div
+          className="bell"
+          style={
+            location?.pathname === "/"
+              ? { marginRight: "20px" }
+              : { marginRight: "0" }
+          }
+        >
           <img
             className="minibell-img"
             src={MiniBell}
@@ -63,6 +69,9 @@ function Natification() {
           />
         </div>
         <p
+          style={
+            location?.pathname === "/" ? { right: "28px" } : { right: "5px" }
+          }
           className={`m-0 ${
             notifications?.length > 0 ? "notifLength" : "d-none"
           }`}
