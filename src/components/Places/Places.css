@@ -40,14 +40,14 @@
 .prevPlace {
   position: absolute;
   cursor: pointer;
-  top: 170px;
+  top: 150px;
   left: -70px;
   font-size: 50px;
   display: inline-block;
 }
 .nextPlace {
   position: absolute;
-  top: 170px;
+  top: 150px;
   right: -40px;
   cursor: pointer;
   font-size: 50px;
