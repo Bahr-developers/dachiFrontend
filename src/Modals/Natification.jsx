@@ -7,11 +7,12 @@ import { QUERY_KEYS } from "../Query/query-keys";
 import { notificationUtils } from "../utils/notification.utilis";
 
 import { IoMdDoneAll } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 
 function Natification() {
   const querClient = useQueryClient();
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
-
+  const location = useLocation()
   const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
 
   const notifications = notification?.filter((notif) => notif.status === "new");
@@ -42,6 +43,7 @@ function Natification() {
       <button
         className="btn notificationsBtn"
         data-bs-toggle="modal"
+        style={location?.pathname==="/"?{marginRight: "20px"}:{}}
         data-bs-target="#staticBackdrop"
       >
         <div className="bell">
