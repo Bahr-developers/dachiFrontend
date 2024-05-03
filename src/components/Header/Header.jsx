@@ -143,7 +143,7 @@ const Header = () => {
             <button
               onClick={() => setShowModal(false)}
               type="submit"
-              className="header-search btn"
+              className="header-search btn bg-success rounded-pill p-3"
             >
               <img
                 className="mini-search"
@@ -230,7 +230,7 @@ const Header = () => {
             <button
               onClick={() => setShowModal(false)}
               type="submit"
-              className="header-search btn"
+              className="header-search btn bg-success rounded-pill p-2 border-0 border-0 "
             >
               <img
                 className="mini-search"

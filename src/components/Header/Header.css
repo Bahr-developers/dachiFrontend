@@ -185,13 +185,13 @@
   outline: none;
   color: #ffffff;
 }
-
+/* 
 .header-search {
   margin: 0;
   padding: 18px 19.51px 19.55px 18px;
   border-radius: 50px;
   background: #3cd298;
-}
+} */
 
 .mini-search {
   display: none;
@@ -631,7 +631,12 @@
     color: #ffffff;
     background-color: inherit;
   }
-
+  .header-search {
+    margin-bottom: -420px;
+    padding: 16px 17px 17.03px 16px;
+    border-radius: 50px;
+    background: #3cd298;
+  }
   .header-nums {
     display: block;
     left: 0;
