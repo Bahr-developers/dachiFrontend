@@ -82,14 +82,14 @@ const Header = () => {
                           ).image
                         }`}
                         alt="bgimg"
-                        className="bg-img"
+                        className="bg-img h-100"
                       />
                       <div className="info-card">
                         <h1 className="oswald header-text"> {el.name} </h1>
                         <h2 className="oswald header-num">${el.price}</h2>
                         <Link
                           to={`/home/view/${el.id}`}
-                          className="header-btn oswald"
+                          className="header-btn"
                         >
                           {HeaderLang[languageChange].btn}
                         </Link>
@@ -172,24 +172,22 @@ const Header = () => {
         </button>
 
         <div className={showModal ? "modal-filter" : "close-filter"}>
-          <div className="modal-header-search d-flex justify-content-between align-items-center ">
-            <h5 className="modal-title" id="staticBackdropSearchLabel">
+          <div className="modal-header-search mb-2 position-relative ">
+            <h5 className="modal-title px-2 p-1 text-start" id="staticBackdropSearchLabel">
               Filter
             </h5>
             <button
               style={{ backgroundColor: "inherit" }}
-              className="border-0 text-light "
+              className="border-0 text-light px-2 position-absolute top-0 end-0"
               onClick={() => setShowModal(false)}
             >
-              {" "}
-              <IoCloseSharp size={30} />{" "}
+              <IoCloseSharp size={23} />
             </button>
           </div>
-          <hr />
-          <form className="" onSubmit={handleFilterCottage}>
-            <div className="header-inner">
-              <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[languageChange].place}</p>
+          <form className="px-3" onSubmit={handleFilterCottage}>
+            <div className="header-inner-mini">
+              <div className="header-inner-box-mini">
+                <p className="header-top-mini">{FilterLeng[languageChange].place}: </p>
                 <select className="header-select-one" name="place" id="place">
                   {place?.length &&
                     place.map((el) => {
@@ -201,8 +199,8 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[languageChange].tip}</p>
+              <div className="header-inner-box-mini">
+                <p className="header-top-mini">{FilterLeng[languageChange].tip}: </p>
                 <select className="header-select-two" name="type" id="dacha">
                   {cottageType?.length &&
                     cottageType.map((el) => {
@@ -214,38 +212,40 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="header-inner-box">
-                <p className="header-top-usd">
-                  {FilterLeng[languageChange].price}
-                </p>
-                <input
-                  className="header-nums"
-                  type="number"
-                  name="price"
-                  placeholder="400$"
-                />
-              </div>
-            </div>
-            <button
-              onClick={() => setShowModal(false)}
-              type="submit"
-              className="header-search btn bg-success rounded-pill p-2 border-0 border-0 "
-            >
-              <img
-                className="mini-search"
-                src={MiniSearch}
-                width="22.99"
-                height="22.97"
-                alt="seach"
-              />
-              <img
-                className="search-img"
-                src={Search}
-                width="34.49"
-                height="34.45"
-                alt="search"
-              />
-            </button>
+              <div className="d-flex position-relative align-items-start justify-content-between ">
+                <div className="header-inner-box-mini">
+                  <p className="header-top-usd">
+                    {FilterLeng[languageChange].price}: 
+                  </p>
+                  <input
+                    className="header-nums"
+                    type="number"
+                    name="price"
+                    placeholder="400$"
+                  />
+                </div> 
+                <button
+                  onClick={() => setShowModal(false)}
+                  type="submit"
+                  className="header-search btn bg-success rounded-pill p-2 border-0 border-0 "
+                >
+                  <img
+                    className="mini-search"
+                    src={MiniSearch}
+                    width="22.99"
+                    height="22.97"
+                    alt="seach"
+                  />
+                  <img
+                    className="search-img"
+                    src={Search}
+                    width="34.49"
+                    height="34.45"
+                    alt="search"
+                  />
+                </button>
+              </div>             
+            </div>                       
           </form>
         </div>
       </header>
