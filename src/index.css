@@ -50,3 +50,8 @@ Link {
   padding: 0;
   box-shadow: inset;
 }
+
+.swiper-slide {
+  display: flex !important;
+  align-items: center !important;
+}

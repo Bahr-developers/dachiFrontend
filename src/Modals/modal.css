@@ -151,7 +151,6 @@
 .notifLength {
   position: absolute;
   top: 6px;
-  right: 7px;
   background-color: red;
   border-radius: 50%;
   width: 20px;
@@ -162,6 +161,7 @@
   justify-content: center;
   color: white;
 }
+
 .notificationsBtn {
   position: relative;
 }

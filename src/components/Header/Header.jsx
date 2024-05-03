@@ -101,67 +101,66 @@ const Header = () => {
         </Swiper>
 
         <form className="header-menu" onSubmit={handleFilterCottage}>
-            <div className="header-inner">
-              <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[languageChange].place}</p>
-                <select className="header-select-one" name="place" id="place">
-                  {place?.length &&
-                    place.map((el) => {
-                      return (
-                        <option key={el.id} value={el.id}>
-                          {el.name}
-                        </option>
-                      );
-                    })}
-                </select>
-              </div>
-              <div className="header-inner-box">
-                <p className="header-top">{FilterLeng[languageChange].tip}</p>
-                <select className="header-select-two" name="type" id="dacha">
-                  {cottageType?.length &&
-                    cottageType.map((el) => {
-                      return (
-                        <option key={el.id} value={el.id}>
-                          {el.name}
-                        </option>
-                      );
-                    })}
-                </select>
-              </div>
-              <div className="header-inner-box">
-                <p className="header-top-usd">
-                  {FilterLeng[languageChange].price}
-                </p>
-                <input
-                  className="header-nums"
-                  type="number"
-                  name="price"
-                  placeholder="400$"
-                />
-              </div>
+          <div className="header-inner">
+            <div className="header-inner-box">
+              <p className="header-top">{FilterLeng[languageChange].place}</p>
+              <select className="header-select-one" name="place" id="place">
+                {place?.length &&
+                  place.map((el) => {
+                    return (
+                      <option key={el.id} value={el.id}>
+                        {el.name}
+                      </option>
+                    );
+                  })}
+              </select>
             </div>
-            <button
-              onClick={() => setShowModal(false)}
-              type="submit"
-              className="header-search btn bg-success rounded-pill p-3"
-            >
-              <img
-                className="mini-search"
-                src={MiniSearch}
-                width="22.99"
-                height="22.97"
-                alt="seach"
+            <div className="header-inner-box">
+              <p className="header-top">{FilterLeng[languageChange].tip}</p>
+              <select className="header-select-two" name="type" id="dacha">
+                {cottageType?.length &&
+                  cottageType.map((el) => {
+                    return (
+                      <option key={el.id} value={el.id}>
+                        {el.name}
+                      </option>
+                    );
+                  })}
+              </select>
+            </div>
+            <div className="header-inner-box">
+              <p className="header-top-usd">
+                {FilterLeng[languageChange].price}
+              </p>
+              <input
+                className="header-nums"
+                type="number"
+                name="price"
+                placeholder="400$"
               />
-              <img
-                className="search-img"
-                src={Search}
-                width="34.49"
-                height="34.45"
-                alt="search"
-              />
-            </button>
-          </form>
-
+            </div>
+          </div>
+          <button
+            onClick={() => setShowModal(false)}
+            type="submit"
+            className="header-search btn bg-success rounded-pill p-3"
+          >
+            <img
+              className="mini-search"
+              src={MiniSearch}
+              width="22.99"
+              height="22.97"
+              alt="seach"
+            />
+            <img
+              className="search-img"
+              src={Search}
+              width="34.49"
+              height="34.45"
+              alt="search"
+            />
+          </button>
+        </form>
 
         {/* Filter modal */}
 
