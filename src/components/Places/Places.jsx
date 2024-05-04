@@ -57,7 +57,7 @@ const Places = () => {
                 </SwiperSlide>
               );
             })}
-        </Swiper>        
+        </Swiper>
         {/* Swiper mini */}
         <Swiper
           className="swiper-place-mini"
