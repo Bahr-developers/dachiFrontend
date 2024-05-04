@@ -6,21 +6,30 @@
   justify-content: space-between;
 }
 
+.miniNavLink {
+  color: #2c2d2e;
+}
+.miniNavLink.active {
+  color: #00abf2;
+}
+
 @media (max-width: 576px) {
   .mini-naw {
     position: fixed;
     bottom: -3px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: aliceblue;
     z-index: 9999999;
   }
+
   .favorite {
     position: relative;
   }
+
   .favarite-num-mini {
     position: absolute;
     background: red;
@@ -28,8 +37,8 @@
     padding: 0 5px;
     font-size: 12px;
     border-radius: 50%;
-    top: -5px;
-    left: 24px;
+    top: -3px;
+    left: 21px;
   }
 }
 

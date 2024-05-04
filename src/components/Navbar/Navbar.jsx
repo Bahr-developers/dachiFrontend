@@ -269,7 +269,7 @@ const Navbar = () => {
                 </div>
 
                 <Link
-                  to="/home/profile/add-new"
+                  to="/home/add-new"
                   className="um-text text-decoration-none"
                 >
                   {NavberLinks[languageChange].add}
