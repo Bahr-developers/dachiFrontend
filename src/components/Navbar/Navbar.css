@@ -75,8 +75,6 @@
   width: 80px;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
@@ -89,8 +87,6 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
@@ -102,32 +98,13 @@
 }
 
 .select-two {
-  width: 197px;
-  margin: 0;
-  padding: 0;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
-  color: #2c2d2e;
-  border: none;
-  outline: none;
+  cursor: pointer;
+  width: 200px;
 }
 
 .select-three {
-  width: 56px;
-  margin: 0;
-  padding: 0;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
-  color: #2c2d2e;
-  border: 2px solid #0087c2;
-  text-align: center;
-  border-radius: 10px;
-  padding: 2px 6px;
-  outline: none;
-  appearance: none;
   cursor: pointer;
+  width: 85px;
 }
 
 .icons {
@@ -161,8 +138,6 @@
   text-decoration: none;
   background: #2c2d2e;
   border-radius: 50px;
-  font-family: sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
@@ -299,23 +274,16 @@
   bottom: 0;
 }
 
-.modal-nav-content {
-  position: relative;
-  width: 90%;
-  max-width: 231px;
-  background-color: #ffffff;
+.userDropdown {
   padding: 16px 24px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  top: 90px;
-  left: 71%;
-  z-index: 9 !important;
 }
 
 .user-modal-nav-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .um-top-gmail {
@@ -370,6 +338,7 @@
   display: flex;
   align-items: center;
   gap: 11px;
+  text-decoration: none;
 }
 
 .um-out-btn {
