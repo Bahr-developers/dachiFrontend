@@ -7,9 +7,12 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet-async";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
+import Loader from "../../components/Loader/Loader";
 
 const Services = () => {
   const services = ALL_DATA.useServices();
+
+  if (services.isLoading) return <Loader />;
 
   return (
     <>
@@ -20,7 +23,7 @@ const Services = () => {
       </Helmet>
       <div className="container">
         <BreacdCrumbs />
-        <h1>Services</h1>
+        <h2 className="mt-3">Services</h2>
         <div className="services-wrap">
           {services.data?.length &&
             services.data.map((el) => {

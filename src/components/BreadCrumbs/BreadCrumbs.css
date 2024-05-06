@@ -9,11 +9,7 @@
   text-transform: uppercase;
 }
 /* breadcrumbs */
-.breadcrumbs {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 8px;
-}
+
 .crumb {
   text-transform: uppercase;
 }

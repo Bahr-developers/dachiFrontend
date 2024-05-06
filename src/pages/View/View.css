@@ -229,9 +229,26 @@
   margin-top: 10px;
 }
 
+.swiper-button-prev .swiper-button-next {
+  display: flex !important;
+  align-items: center !important;
+}
+
 @media (max-width: 576px) {
+  .swiper-button-prev:after {
+    font-size: 30px !important;
+    position: absolute !important;
+    top: 0 !important;
+  }
+  .swiper-button-next:after {
+    font-size: 30px !important;
+    position: absolute !important;
+    top: 0 !important;
+  }
+
   .view {
     overflow: hidden;
+    margin-top: 18px;
   }
   .phoneCallMobile {
     display: block;

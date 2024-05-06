@@ -92,6 +92,9 @@
     border-radius: 10px;
     z-index: 2;
   }
+  .modal-content {
+    left: 200px;
+  }
 }
 .NotificationTime {
   font-size: 14px;

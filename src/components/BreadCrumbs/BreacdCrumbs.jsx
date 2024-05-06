@@ -11,7 +11,7 @@ const BreacdCrumbs = () => {
   ) {
     crumbs[2] = "cottage";
   }
-  const result = crumbs.map((crumb, i, arr) => {
+  const result = crumbs.map((crumb, i) => {
     currentLink.push(`/${crumb}`);
     return (
       <div className="crumb" key={i}>
@@ -19,7 +19,7 @@ const BreacdCrumbs = () => {
       </div>
     );
   });
-  return <div className="breadcrumbs"> {result} </div>;
+  return <div className="breadcrumbs container"> {result} </div>;
 };
 
 export default BreacdCrumbs;

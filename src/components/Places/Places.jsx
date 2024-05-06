@@ -89,12 +89,13 @@ const Places = () => {
               );
             })}
         </Swiper>
-
-        <div ref={prevPlaceElm} className="prevPlace">
-          <i className="bx mt-2 bx-left-arrow-alt"></i>
-        </div>
-        <div ref={nextPlaceElm} className="nextPlace">
-          <i className="bx mt-2 bx-right-arrow-alt"></i>
+        <div className="placeNavigator">
+          <div ref={prevPlaceElm} className="nextPrevNavigator">
+            <i className="bx bx-left-arrow-alt"></i>
+          </div>
+          <div ref={nextPlaceElm} className="nextPrevNavigator">
+            <i className="bx bx-right-arrow-alt"></i>
+          </div>
         </div>
       </div>
     </div>
