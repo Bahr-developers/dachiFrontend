@@ -60,11 +60,9 @@ const SignUp = () => {
                   </span>
                 </label>
               </div>
-              <input
-                className="signup-submit"
-                type="submit"
-                value="Отправить код"
-              />
+              <button className="signup-submit" type="submit">
+                Отправить код
+              </button>
             </form>
           </div>
         </div>
