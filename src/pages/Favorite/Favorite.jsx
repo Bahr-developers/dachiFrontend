@@ -48,7 +48,7 @@ const Favorite = () => {
           ) : (
             <>
               <div className="noneFavoriteCart border-warning border">
-                <p className="emptyText">You have this page home for empty</p>
+                <p className="emptyText">Don't have favorite cottages</p>
               </div>
             </>
           )}
