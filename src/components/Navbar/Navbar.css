@@ -132,6 +132,10 @@
   font-size: 14px;
 }
 
+.hamburgerClassname {
+  display: none;
+}
+
 .sign-in {
   margin: 0;
   padding: 15px 57px;
@@ -356,6 +360,9 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .hamburgerClassname {
+    display: block;
+  }
   .navbar {
     margin: 0;
     padding: 10px 0;
@@ -439,7 +446,7 @@
   height: 100vh;
   opacity: 1;
 }
-.overlayMenuActive{
+.overlayMenuActive {
   position: fixed;
   top: 0;
   right: 0;

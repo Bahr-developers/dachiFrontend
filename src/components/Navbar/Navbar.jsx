@@ -17,9 +17,7 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import { NavLeng, NavberLinks } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 
-
 Modal.setAppElement("#root");
-
 
 const Navbar = () => {
   const user = ALL_DATA.useSingleUser()?.data;
@@ -54,10 +52,10 @@ const Navbar = () => {
     window.location = e.target.value;
   };
   const closeModalOverlay = (e) => {
-    if(e.target.classList[0]==='overlayMenuActive'){
-      setModalIsOpen(false)
+    if (e.target.classList[0] === "overlayMenuActive") {
+      setModalIsOpen(false);
     }
-  } 
+  };
   // language change
   const { languageChange, toggleLanguage } = useContext(LanguageContext);
 
@@ -77,7 +75,7 @@ const Navbar = () => {
           </button>
 
           {/*  hamburger menu star */}
-          <div className="">
+          <div className="hamburgerClassname">
             <div
               className={`hamburgerMenu d-flex justify-content-between ${
                 modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
@@ -87,7 +85,10 @@ const Navbar = () => {
                 <img src={Close} width="18.62" height="18.62" alt="close" />
               </button>
               <div className="modal-nav-menu">
-                <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
+                <Link
+                  to="tel:+9981002314"
+                  className="modal-nav-contact d-black "
+                >
                   {NavLeng[languageChange].connection}
                 </Link>
                 <select
@@ -149,13 +150,9 @@ const Navbar = () => {
                   <img src={GoOut} alt="" />
                   Выход
                 </button>
-              </div>            
+              </div>
             </div>
-            <div className={`${
-              modalIsOpen ? "overlayMenuActive" : ""
-            }`}>
-
-            </div>
+            <div className={`${modalIsOpen ? "overlayMenuActive" : ""}`}></div>
           </div>
           {/*  hamburger menu end */}
 
