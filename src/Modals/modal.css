@@ -8,11 +8,9 @@
 .minibell-img {
   display: none;
 }
-
 .modal-notification::-webkit-scrollbar {
   display: none;
 }
-
 .modal-natif-dialog {
   position: relative;
   top: 60px;
@@ -23,6 +21,7 @@
 .pesonal-notif {
   width: 70px;
 }
+
 /*  ================================== Tariff Css */
 .tariff-modal-wrap {
   position: fixed;
@@ -50,7 +49,49 @@
 .tarif-info {
   width: 80%;
 }
-@media only screen and (max-width: 576px) {
+.tarif-day{
+  margin-left: 50px !important;
+}
+.NotificationTime {
+  font-size: 14px;
+}
+
+.notifBtn {
+  background: rgb(45, 164, 45);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  transform: opacity 0.3;
+}
+.notifBtn:hover {
+  opacity: 0.8;
+}
+.notifLength {
+  position: absolute;
+  top: 6px;
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.notificationsBtn {
+  position: relative;
+}
+@media (max-width: 576px) {
+  .notifLength {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    right: 30px;
+  }
   .modal-natif-dialog {
     position: absolute;
     margin-left: -180px;
@@ -86,37 +127,32 @@
   .tariff-modal-wrap {
     position: fixed;
     top: 90px;
-    width: 350px;
+    text-align: center;
+    width: 350px !important;
     left: 20px;
     background: #282727f8;
     border-radius: 10px;
     z-index: 2;
   }
-  .modal-content {
-    left: 200px;
+  .tarif-day{
+    margin-left: 35px !important;
   }
 }
-.NotificationTime {
-  font-size: 14px;
-}
 
-.notifBtn {
-  background: rgb(45, 164, 45);
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  transform: opacity 0.3;
-}
-.notifBtn:hover {
-  opacity: 0.8;
-}
-
-@media only screen and (max-width: 390px) {
-  .modal-content {
-    position: absolute;
-    left: 185px;
+@media (max-width: 390px) {
+  /* ================Traffik Css */
+  .tariff-modal-wrap {
+    position: fixed;
+    top: 90px;
+    text-align: center;
+    width: 300px !important;
+    left: 20px;
+    background: #282727f8;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  .tarif-day{
+    margin-left: 25px !important;
   }
   .notifBtn {
     padding: 2px 5px;
@@ -150,29 +186,4 @@
   }
 }
 
-.notifLength {
-  position: absolute;
-  top: 6px;
-  background-color: red;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  padding: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
 
-.notificationsBtn {
-  position: relative;
-}
-
-@media (max-width: 576px) {
-  .notifLength {
-    width: 18px;
-    height: 18px;
-    font-size: 12px;
-    right: 30px;
-  }
-}

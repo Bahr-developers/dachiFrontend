@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { TariffUtils } from "../utils/tariff.utilis";
 import { QUERY_KEYS } from "../Query/query-keys";
 import toastify from "../utils/toastify";
@@ -38,8 +38,14 @@ const Tariff = (props) => {
     activete.current.classList.remove("disabled");
   };
 
+  const closeModalTarifOutline= (e) => {
+    if(e.target.classList[0]==='modal-wrap'){
+      setIsOpen(false)
+    }
+  }
+
   return (
-    <div>
+    <div onClick={closeModalTarifOutline}>
       <button
         className="tarif-btn border-0"
         onClick={() => setIsOpen(true)}
@@ -72,7 +78,7 @@ const Tariff = (props) => {
                 <i className="bx fs-1 link-light  bx-x"></i>
               </button>
               <div className="tarif-info text-light mt-5 ">
-                <p className="bg-light text-center text-dark fs-2 ms-5  rounded-5 w-50">
+                <p className="tarif-day bg-light text-center text-dark fs-2 mx-auto rounded-5 w-50">
                   {props.tariff.days} дней
                 </p>
                 <p className="fs-5 fw-bold text-center w-75 ">
