@@ -47,16 +47,21 @@ const AddNew = () => {
     comforts: [],
     response: [],
   });
+
   const queryClient = useQueryClient();
+
   const region = ALL_DATA.useRegion();
+
   const place = ALL_DATA.usePlace();
+
   const cottageType = ALL_DATA.useCottageType();
   const comforts = ALL_DATA.useComforts();
+
   const cottage = useMutation({
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cotteges"] });
-      toastify.successMessage("Dacha muvaffaqiyat qo'shildi 😍");
+      toastify.successMessage("Dacha muvaffaqiyat qo'shildi");
     },
     onError: (err) => {
       if (err?.response?.status === 406) {
@@ -79,6 +84,7 @@ const AddNew = () => {
       });
     }
   };
+
   const handleCottageComforts = (e) => {
     const { value, checked } = e.target;
     const { comforts } = cottageComforts;
@@ -94,12 +100,15 @@ const AddNew = () => {
       });
     }
   };
+
   const handlCottage = async (e) => {
     e.preventDefault();
+
     let images = [];
     for (let i = 0; i < e.target.childimg.files.length; i++) {
       images.push(e.target.childimg.files[i]);
     }
+
     cottage.mutate({
       name: e.target.cottagename.value,
       images: images,
@@ -114,15 +123,18 @@ const AddNew = () => {
       lattitude: "" || undefined,
       longitude: "" || undefined,
     });
+
     childImagesWrapper.current.innerHTML = "";
     mainImage.current.setAttribute("src", Dacha3);
     e.target.reset();
   };
+
   const handleMainImage = async (e) => {
     const mainImgUrl = await getBase64Full(e.target.files[0]);
     mainImage.current.classList.remove("d-none");
     mainImage.current.setAttribute("src", mainImgUrl);
   };
+
   const handlmultipleImg = async (e) => {
     const images = [];
     for (let i = 0; i < e.target.files.length; i++) {
@@ -251,7 +263,7 @@ const AddNew = () => {
                     return (
                       <label key={e.id} className="addnew-inner-check">
                         <input
-                          className="addnew-check"
+                          className="addnew-check form-check-input"
                           type="checkbox"
                           value={e.id}
                           name="cottagetype"

@@ -3,14 +3,17 @@ import Tariff from "../../Modals/Tariff";
 import { ALL_DATA } from "../../Query/get_all";
 
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
-import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Loader from "../../components/Loader/Loader";
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
+
+  if (tariff.isLoading) return <Loader />;
+
   return (
     <>
       <Helmet>

@@ -8,12 +8,28 @@
 }
 
 .favorite-cards {
-  margin: 0;
+  margin: 30px 0 20px 0 !important;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
+
+.emptyText {
+  padding: 0;
+  margin: 0;
+}
+
+.noneFavoriteCart {
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 70%;
+  background: rgba(255, 192, 7, 0.3);
+  display: flex;
+  align-items: center;
+  margin-bottom: 180px;
+}
+
 @media (max-width: 576px) {
   .favorite-header {
     margin: 32px 0 24px;
@@ -24,8 +40,13 @@
     color: #2c2d2e;
   }
 
+  .noneFavoriteCart {
+    width: 100%;
+    margin-bottom: 120px;
+  }
+
   .favorite-cards {
-    margin: 0;
+    margin: 30px 0 70px 0 !important;
     padding: 0;
     display: flex;
     flex-wrap: wrap;

@@ -3,14 +3,15 @@ import DachaCard from "../DachaCards/DachaCard";
 import DachaMiniCard from "../DachaMiniCard/DachaMiniCard";
 import "./FilterSection.css";
 import { LanguageContext } from "../../helper/languageContext";
-import { FilterNotFound, FilterSectionLeng } from "../../configs/language";
+import { FilterSectionLeng } from "../../configs/language";
 
 function FilterSEction({ cottageFilter }) {
   const cottage = cottageFilter;
   // useContext language
   const { languageChange } = useContext(LanguageContext);
+
   return (
-    <div className={cottage.data?.length ? "container" : "d-none"}>
+    <div className={cottage?.data?.length ? "container" : "d-none"}>
       <div className="dacha-filter">
         <h2 className="dacha-top-filter">
           {FilterSectionLeng[languageChange]}
@@ -32,9 +33,11 @@ function FilterSEction({ cottageFilter }) {
                 })}
           </div>
         ) : (
-          <div>
-            <p>{FilterNotFound[languageChange]}</p>
-          </div>
+          <>
+            <div className="noneFavoriteCart my-1 border-warning border">
+              <p className="emptyText">cottage not found</p>
+            </div>
+          </>
         )}
       </div>
     </div>

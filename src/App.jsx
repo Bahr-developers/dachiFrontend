@@ -93,7 +93,7 @@ function App() {
               />
               <Route path="home/profile/services" element={<Services />} />
               <Route
-                path="home/profile/add-new"
+                path="home/add-new"
                 element={
                   <Protected>
                     <AddNew />

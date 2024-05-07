@@ -18,10 +18,10 @@ function Announcoment() {
       <div className="announcoment">
         <BreacdCrumbs />
         <div className="container">
-          <div className="dacha">
+          <div className="announcementDacha">
             {userCottage.data && userCottage.data.length ? (
               <>
-                <h2 className="dacha-top">Мои объявлении</h2>
+                <h2 className="m-0 obnavleniya">Мои объявлении</h2>
                 <div className="dacha-cards">
                   {userCottage.data?.length &&
                     userCottage.data.map((e) => {
@@ -39,8 +39,11 @@ function Announcoment() {
               </>
             ) : (
               <>
-                <h2 className="dacha-top">Мои объявлении</h2>
-                <p className="text-danger">Hozircha siz e'lon bermagansiz</p>
+                <div className="border-warning border emptyAnnouncement">
+                  <p className="emptyText m-0">
+                    Hozircha siz e'lon bermagansiz
+                  </p>
+                </div>
               </>
             )}
           </div>

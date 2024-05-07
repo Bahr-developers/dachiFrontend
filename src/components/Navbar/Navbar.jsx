@@ -5,6 +5,7 @@ import Close from "../../assets/images/close.svg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useContext, useRef, useState } from "react";
 import Modal from "react-modal";
+
 import { FiHeart } from "react-icons/fi";
 import UserMenu from "../../assets/images/user-menu.svg";
 import GoOut from "../../assets/images/go-out.svg";
@@ -19,28 +20,22 @@ import { LanguageContext } from "../../helper/languageContext";
 
 Modal.setAppElement("#root");
 
+
 const Navbar = () => {
-  const userImg = ALL_DATA.useSingleUser()?.data?.image;
+  const user = ALL_DATA.useSingleUser()?.data;
+
   const navigate = useNavigate();
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [modalOpen, setModalOpen] = useState(false);
-
   const defaultLang = localStorage.getItem("language");
   const language = ALL_DATA.useLanguage();
+
   const cottage = ALL_DATA.useCottage();
+
   const fovariteCottage =
     cottage?.data?.length &&
     cottage?.data?.filter((e) => e.isLiked === true)?.length;
-
-  function openModal() {
-    setModalOpen(true);
-  }
-
-  function closeModal() {
-    setModalOpen(false);
-  }
 
   const registered = useRef(null);
   const signIn = useRef(null);
@@ -51,7 +46,6 @@ const Navbar = () => {
     signIn.current.classList.remove("d-none");
     registered.current.classList.add("d-none");
     localStorage.clear();
-    setModalOpen(false);
     setModalIsOpen(false);
     window.location.reload();
     navigate("/");
@@ -197,7 +191,7 @@ const Navbar = () => {
               </select>
 
               <select
-                className="select-three"
+                className="select-three form-select"
                 name="language"
                 onChange={toggleLanguage}
               >
@@ -235,20 +229,6 @@ const Navbar = () => {
               <Notification />
             </div>
 
-            <button
-              ref={registered}
-              className={accessToken ? "sign-out" : "sign-out d-none"}
-              onClick={openModal}
-            >
-              <img src={UserMenu} alt="" />
-              <div className="user-nav">
-                <img
-                  src={`${IMG_BASE_URL}${userImg}`}
-                  className={userImg ? "user-nav" : "user-nav d-none"}
-                  alt=""
-                />
-              </div>
-            </button>
             <Link
               ref={signIn}
               to="/sign-in"
@@ -258,25 +238,39 @@ const Navbar = () => {
             >
               Вход
             </Link>
-            <div className="icons">
-              <Modal
-                isOpen={modalOpen}
-                onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                overlayClassName="modal-nav-overlay"
-                className="modal-nav-content"
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ref={registered}
+                className={accessToken ? "sign-out" : "sign-out d-none"}
               >
-                <div className="user-modal-nav-top">
-                  <p className="um-top-gmail">User@gmail.com</p>
+                <img src={UserMenu} alt="" />
+                <div className="user-nav">
                   <img
-                    src={`${IMG_BASE_URL}${userImg}`}
-                    className={userImg ? "um-top-img" : "d-none um-top-img"}
+                    src={`${IMG_BASE_URL}${user?.image}`}
+                    className={user?.image ? "user-nav" : "user-nav d-none"}
+                    alt=""
+                  />
+                </div>
+              </button>
+              <ul class="dropdown-menu userDropdown">
+                <div className="user-modal-nav-top">
+                  <p className="um-top-gmail">
+                    {user?.name.split(" ")[1] || "user email"}
+                  </p>
+                  <img
+                    src={`${IMG_BASE_URL}${user?.image}`}
+                    className={user?.image ? "um-top-img" : "d-none um-top-img"}
                     alt="userImg"
                   />
                 </div>
 
                 <Link
-                  to="/home/profile/add-new"
+                  to="/home/add-new"
                   className="um-text text-decoration-none"
                 >
                   {NavberLinks[languageChange].add}
@@ -309,7 +303,7 @@ const Navbar = () => {
                     {NavberLinks[languageChange].exit}
                   </button>
                 </Link>
-              </Modal>
+              </ul>
             </div>
           </div>
         </div>

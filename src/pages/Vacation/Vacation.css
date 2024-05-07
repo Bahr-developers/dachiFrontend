@@ -8,6 +8,15 @@
   color: #2c2d2e;
 }
 
+.nonePlaceCart {
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 70%;
+  background: rgba(255, 192, 7, 0.3);
+  display: flex;
+  align-items: center;
+}
+
 .place-card-sort-big {
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +28,10 @@
 }
 
 @media (max-width: 565px) {
+  .nonePlaceCart {
+    width: 100%;
+    margin-bottom: 160px;
+  }
   .place-card-sort-big {
     display: none;
   }

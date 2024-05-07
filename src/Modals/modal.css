@@ -60,12 +60,6 @@
     left: 146px;
   }
 
-  .modal-notification {
-    position: absolute;
-    top: 10px;
-    left: 40px;
-  }
-
   .bell {
     margin: 0;
     padding: 9.63px 11.18px 9.49px 10.06px;
@@ -98,6 +92,9 @@
     border-radius: 10px;
     z-index: 2;
   }
+  .modal-content {
+    left: 200px;
+  }
 }
 .NotificationTime {
   font-size: 14px;
@@ -115,7 +112,12 @@
 .notifBtn:hover {
   opacity: 0.8;
 }
+
 @media only screen and (max-width: 390px) {
+  .modal-content {
+    position: absolute;
+    left: 185px;
+  }
   .notifBtn {
     padding: 2px 5px;
     font-size: 12px;

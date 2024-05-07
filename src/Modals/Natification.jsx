@@ -80,7 +80,7 @@ function Natification() {
         </p>
       </button>
       <div
-        className="modal modal-notification fade modal-natif"
+        className="modal  fade modal-natif"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
