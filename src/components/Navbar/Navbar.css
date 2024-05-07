@@ -439,6 +439,16 @@
   height: 100vh;
   opacity: 1;
 }
+.overlayMenuActive{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  background: #1916168c;
+  z-index: 29;
+}
 
 .hamburgerMenuClose {
   pointer-events: none;

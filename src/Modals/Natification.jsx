@@ -48,7 +48,7 @@ function Natification() {
         <div
           className="bell"
           style={
-            location?.pathname === "/"
+            location?.pathname === "/" || location?.pathname === "/home"
               ? { marginRight: "20px" }
               : { marginRight: "0" }
           }
@@ -70,7 +70,7 @@ function Natification() {
         </div>
         <p
           style={
-            location?.pathname === "/" ? { right: "28px" } : { right: "5px" }
+            location?.pathname === "/" || location?.pathname === "/home" ? { right: "28px" } : { right: "5px" }
           }
           className={`m-0 ${
             notifications?.length > 0 ? "notifLength" : "d-none"
