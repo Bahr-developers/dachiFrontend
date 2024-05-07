@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { LanguageContext } from "./helper/languageContext";
 import { useEffect, useState } from "react";
@@ -50,12 +50,17 @@ function App() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname]);
 
+  const onCloseMenuModal = (e) => {
+    return e.target.classList
+
+}
+
   return (
-    <div className="App">
+    <div onClick={onCloseMenuModal} className="App">
       <LanguageContext.Provider value={{ languageChange, toggleLanguage }}>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home closeModalMenu={onCloseMenuModal} />} />
             <Route path="/" element={<Home />}>
               <Route path="home/contact" element={<Contact />} />
               <Route
