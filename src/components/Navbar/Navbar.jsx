@@ -243,7 +243,9 @@ const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 ref={registered}
-                className={accessToken ? "sign-out btn btn-secondary dropdown-toggle" : "sign-out d-none"}
+                className={
+                  accessToken ? "sign-out btn btn-secondary" : "sign-out d-none"
+                }
               >
                 <img src={UserMenu} alt="" />
                 <div className="user-nav">
