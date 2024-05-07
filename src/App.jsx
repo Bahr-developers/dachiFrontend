@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { LanguageContext } from "./helper/languageContext";
 import { useEffect, useState } from "react";
@@ -55,7 +55,7 @@ function App() {
       <LanguageContext.Provider value={{ languageChange, toggleLanguage }}>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home/>} />
             <Route path="/" element={<Home />}>
               <Route path="home/contact" element={<Contact />} />
               <Route

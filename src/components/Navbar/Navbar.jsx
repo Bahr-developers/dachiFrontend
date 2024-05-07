@@ -3,7 +3,9 @@ import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Close from "../../assets/images/close.svg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import Modal from "react-modal";
+
 import { FiHeart } from "react-icons/fi";
 import UserMenu from "../../assets/images/user-menu.svg";
 import GoOut from "../../assets/images/go-out.svg";
@@ -14,6 +16,10 @@ import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { NavLeng, NavberLinks } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
+
+
+Modal.setAppElement("#root");
+
 
 const Navbar = () => {
   const user = ALL_DATA.useSingleUser()?.data;
@@ -47,13 +53,17 @@ const Navbar = () => {
   const jumpLink = (e) => {
     window.location = e.target.value;
   };
-
+  const closeModalOverlay = (e) => {
+    if(e.target.classList[0]==='overlayMenuActive'){
+      setModalIsOpen(false)
+    }
+  } 
   // language change
   const { languageChange, toggleLanguage } = useContext(LanguageContext);
 
   return (
     <>
-      <div className="container">
+      <div onClick={closeModalOverlay} className="container">
         <div className="navbar">
           <button onClick={() => setModalIsOpen(true)} className="menu">
             <img
@@ -65,78 +75,86 @@ const Navbar = () => {
             />
             <p className="menu-text">Меню</p>
           </button>
-          {/*  hamburger menu star */}
-          <div
-            className={`hamburgerMenu ${
-              modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
-            }`}
-          >
-            <button className="close" onClick={() => setModalIsOpen(false)}>
-              <img src={Close} width="18.62" height="18.62" alt="close" />
-            </button>
-            <div className="modal-nav-menu">
-              <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
-                {NavLeng[languageChange].connection}
-              </Link>
-              <select
-                defaultValue="socials"
-                className="modal-nav-select-two"
-                name="social"
-                id="social"
-              >
-                <option hidden value="socials">
-                  {NavLeng[languageChange].set}
-                </option>
-                <option value="telegram">Telegram</option>
-                <option value="facebook">Facebook</option>
-                <option value="instagram">Instagram</option>
-                <option value="youtube">Youtube</option>
-              </select>
 
-              <select
-                className="modal-nav-select-three"
-                name="language"
-                id="language"
-                onChange={toggleLanguage}
-              >
-                {language.data?.length &&
-                  language.data.map((e) => {
-                    if (e.code === defaultLang) {
+          {/*  hamburger menu star */}
+          <div className="">
+            <div
+              className={`hamburgerMenu d-flex justify-content-between ${
+                modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
+              }`}
+            >
+              <button className="close" onClick={() => setModalIsOpen(false)}>
+                <img src={Close} width="18.62" height="18.62" alt="close" />
+              </button>
+              <div className="modal-nav-menu">
+                <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
+                  {NavLeng[languageChange].connection}
+                </Link>
+                <select
+                  defaultValue="socials"
+                  className="modal-nav-select-two"
+                  name="social"
+                  id="social"
+                >
+                  <option hidden value="socials">
+                    {NavLeng[languageChange].set}
+                  </option>
+                  <option value="telegram">Telegram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="youtube">Youtube</option>
+                </select>
+
+                <select
+                  className="modal-nav-select-three"
+                  name="language"
+                  id="language"
+                  onChange={toggleLanguage}
+                >
+                  {language.data?.length &&
+                    language.data.map((e) => {
+                      if (e.code === defaultLang) {
+                        return (
+                          <option key={e.id} selected value={e.code}>
+                            {e.code}
+                          </option>
+                        );
+                      }
                       return (
-                        <option key={e.id} selected value={e.code}>
+                        <option key={e.id} value={e.code}>
                           {e.code}
                         </option>
                       );
-                    }
-                    return (
-                      <option key={e.id} value={e.code}>
-                        {e.code}
-                      </option>
-                    );
-                  })}
-              </select>
+                    })}
+                </select>
 
-              <Link
-                to="/sign-in"
-                className={
-                  accessToken && refreshToken
-                    ? "modal-nav-out d-none"
-                    : "modal-nav-out d-block"
-                }
-              >
-                Вход
-              </Link>
-              <button
-                onClick={logoutBtn}
-                className={
-                  accessToken && refreshToken
-                    ? "modal-nav-out"
-                    : "modal-nav-out d-none"
-                }
-              >
-                <img src={GoOut} alt="" />
-                Выход
-              </button>
+                <Link
+                  to="/sign-in"
+                  className={
+                    accessToken && refreshToken
+                      ? "modal-nav-out d-none"
+                      : "modal-nav-out d-block"
+                  }
+                >
+                  Вход
+                </Link>
+                <button
+                  onClick={logoutBtn}
+                  className={
+                    accessToken && refreshToken
+                      ? "modal-nav-out"
+                      : "modal-nav-out d-none"
+                  }
+                >
+                  <img src={GoOut} alt="" />
+                  Выход
+                </button>
+              </div>            
+            </div>
+            <div className={`${
+              modalIsOpen ? "overlayMenuActive" : ""
+            }`}>
+
             </div>
           </div>
           {/*  hamburger menu end */}
