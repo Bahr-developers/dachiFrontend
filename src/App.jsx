@@ -50,17 +50,12 @@ function App() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [location.pathname]);
 
-  const onCloseMenuModal = (e) => {
-    return e.target.classList
-
-}
-
   return (
-    <div onClick={onCloseMenuModal} className="App">
+    <div className="App">
       <LanguageContext.Provider value={{ languageChange, toggleLanguage }}>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/home" element={<Home closeModalMenu={onCloseMenuModal} />} />
+            <Route path="/home" element={<Home/>} />
             <Route path="/" element={<Home />}>
               <Route path="home/contact" element={<Contact />} />
               <Route

@@ -3,7 +3,7 @@ import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Close from "../../assets/images/close.svg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import Modal from "react-modal";
 import { FiHeart } from "react-icons/fi";
 import UserMenu from "../../assets/images/user-menu.svg";

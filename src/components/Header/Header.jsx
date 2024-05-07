@@ -53,9 +53,16 @@ const Header = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const closeModalOutlane = (e)=>  {
+    if(e.target.classList[0]==="activeFilterModal"){
+      setShowModal(false)
+    }
+  }
+
   return (
     <>
-      <header className="header">
+      <header onClick={closeModalOutlane} className="header">
+      <div className={showModal ? "activeFilterModal" : ""}></div>
         <Swiper
           className="swiper-header"
           modules={[Navigation, A11y, Scrollbar, Autoplay, Parallax]}
@@ -162,8 +169,7 @@ const Header = () => {
           </button>
         </form>
 
-        {/* Filter modal */}
-
+        {/************************************* Filter modal */}
         <button
           onClick={() => setShowModal(!showModal)}
           className="mini-search-icon"
