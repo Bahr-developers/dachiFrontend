@@ -10,7 +10,7 @@ import { QUERY_KEYS } from "../../Query/query-keys";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { useLocation } from "react-router-dom";
 
-const Home = ({closeModalMenu}) => {
+const Home = () => {
   const { isLoading } = useQuery({
     queryKey: [QUERY_KEYS.cottages],
     queryFn: cottageUtils.getCottageTop,
@@ -21,7 +21,7 @@ const Home = ({closeModalMenu}) => {
   if (isLoading) return <Loader />;
   return (
     <>
-      <Navbar closeModalMenu={closeModalMenu}/>
+      <Navbar/>
       {location.pathname === "/home" || location.pathname === "/" ? (
         <>
           <Header />

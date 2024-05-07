@@ -64,7 +64,7 @@ const Navbar = () => {
   return (
     <>
       <div onClick={closeModalOverlay} className="container">
-        <div className="navbar">
+        <div className="navbar ">
           <button onClick={() => setModalIsOpen(true)} className="menu">
             <img
               className="menu-img"
@@ -239,14 +239,14 @@ const Navbar = () => {
               Вход
             </Link>
 
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                // className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 ref={registered}
-                className={accessToken ? "sign-out" : "sign-out d-none"}
+                className={accessToken ? "sign-out btn btn-secondary dropdown-toggle" : "sign-out d-none"}
               >
                 <img src={UserMenu} alt="" />
                 <div className="user-nav">
@@ -257,7 +257,7 @@ const Navbar = () => {
                   />
                 </div>
               </button>
-              <ul class="dropdown-menu userDropdown">
+              <ul className="dropdown-menu userDropdown">
                 <div className="user-modal-nav-top">
                   <p className="um-top-gmail">
                     {user?.name.split(" ")[1] || "user email"}
