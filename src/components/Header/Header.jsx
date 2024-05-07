@@ -53,16 +53,16 @@ const Header = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const closeModalOutlane = (e)=>  {
-    if(e.target.classList[0]==="activeFilterModal"){
-      setShowModal(false)
+  const closeModalOutlane = (e) => {
+    if (e.target.classList[0] === "activeFilterModal") {
+      setShowModal(false);
     }
-  }
+  };
 
   return (
     <>
       <header onClick={closeModalOutlane} className="header">
-      <div className={showModal ? "activeFilterModal" : ""}></div>
+        <div className={showModal ? "activeFilterModal" : ""}></div>
         <Swiper
           className="swiper-header"
           modules={[Navigation, A11y, Scrollbar, Autoplay, Parallax]}
