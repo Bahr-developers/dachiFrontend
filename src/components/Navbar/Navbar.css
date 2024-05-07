@@ -435,7 +435,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 9999;
   background: #2c2d2e;
   min-height: 100vh;
   transition: width 500ms ease-in-out, opacity 500ms ease-in-out;
@@ -454,7 +454,7 @@
   height: 100vh;
   opacity: 1;
   background: #1916168c;
-  z-index: 29;
+  z-index: 9998;
 }
 
 .hamburgerMenuClose {

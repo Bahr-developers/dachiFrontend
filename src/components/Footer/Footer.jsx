@@ -82,19 +82,19 @@ const Footer = () => {
         <div className="footer-bottom">
           <p className="footer-address">{FooterMiniLang[languageChange]}</p>
           <div className="footer-socials">
-            <a href="https://www.instagram.com/" className="footer-social">
+            <a href="https://www.instagram.com/dachi_uz/" className="footer-social">
               <img src={Instagram} width="36" height="36" alt="instagram" />
             </a>
 
-            <a href="https://www.facebook.com/" className="footer-social">
+            <a href="https://www.facebook.com/dachagori/" className="footer-social">
               <img src={Facebook} width="36" height="36" alt="facebook" />
             </a>
 
-            <a href="https://telegram.org/" className="footer-social">
+            <a href="https://telegram.org/dachi_v_gorax" className="footer-social">
               <img src={Telegram} width="36" height="36" alt="telegram" />
             </a>
 
-            <a href="https://www.youtube.com/" className="footer-social">
+            <a href="https://www.youtube.com/@dachi_uz" className="footer-social">
               <img src={Youtube} width="36" height="36" alt="youtube" />
             </a>
           </div>
