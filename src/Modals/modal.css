@@ -49,7 +49,7 @@
 .tarif-info {
   width: 80%;
 }
-.tarif-day{
+.tarif-day {
   margin-left: 50px !important;
 }
 .NotificationTime {
@@ -98,7 +98,7 @@
     width: 220px !important;
     height: 400px !important;
     top: 63px;
-    left: 146px;
+    left: 360px;
   }
 
   .bell {
@@ -134,13 +134,12 @@
     border-radius: 10px;
     z-index: 2;
   }
-  .tarif-day{
+  .tarif-day {
     margin-left: 35px !important;
   }
 }
 
-@media (max-width: 390px) {
-  /* ================Traffik Css */
+@media (max-width: 395px) {
   .tariff-modal-wrap {
     position: fixed;
     top: 90px;
@@ -151,7 +150,7 @@
     border-radius: 10px;
     z-index: 2;
   }
-  .tarif-day{
+  .tarif-day {
     margin-left: 25px !important;
   }
   .notifBtn {
@@ -168,6 +167,8 @@
     margin-left: -200px;
     width: 220px !important;
     height: 350px !important;
+    top: 63px;
+    left: 300px !important;
   }
 
   .bell {
@@ -185,5 +186,3 @@
     display: block;
   }
 }
-
-
