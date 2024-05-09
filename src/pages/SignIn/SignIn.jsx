@@ -66,7 +66,7 @@ const SignIn = () => {
         userId: phone?.data?.userId,
       });
     } else {
-      toastify.errorMessage("SMS code notog`ri !!!");
+      toastify.errorMessage("SMS code noto'gri !!!");
     }
   };
 
