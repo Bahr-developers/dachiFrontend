@@ -241,30 +241,30 @@ export const FilterNotFound = {
 export const fovariteLang = {
   uz: "Hozirda dachalar mavjud emas",
   ru: "Нет любимых коттеджей  ",
-  en: "Don't have favorite cottages"
-}
+  en: "Don't have favorite cottages",
+};
 export const notificationLang = {
   uz: "Bildirishnomalar",
   ru: "Уведомления",
-  en: "Notifications"
-}
+  en: "Notifications",
+};
 export const userCottageSingle = {
   uz: "ning dachalari",
   ru: " kоттеджe",
-  en: "'s Cottage"
-}
+  en: "'s Cottage",
+};
 export const exitLang = [
   {
     uz: "Chiqish",
     ru: "Выход",
-    en: "Exit"
+    en: "Exit",
   },
   {
     uz: "Kirish",
     ru: "Входить",
-    en: "Enter"
-  }
-]
+    en: "Log in",
+  },
+];
 export const ViewPageLanguage = {
   contactUser: {
     uz: "Foydalanuvchi",
@@ -451,4 +451,38 @@ export const TariffPageLanguage = {
     ru: "Активит",
     en: " Activite",
   },
+};
+
+export const signInLanguage = {
+  login: {
+    uz: "Kirish",
+    ru: "Вход",
+    en: "Log in",
+  },
+  phone: {
+    uz: "Raqamizni kiriting",
+    ru: "Введите свой телефон",
+    en: "Enter your phone",
+  },
+  enter: {
+    uz: "Kirish",
+    ru: "Войти",
+    en: "Log In",
+  },
+  smsCode: {
+    uz: "sms kod",
+    ru: "смс-код",
+    en: "sms code",
+  },
+  smsError: {
+    uz: "SMS kod noto'gri !!!",
+    ru: "СМС-код неверен.",
+    en: "code is incorrect",
+  },
+};
+
+export const MenuLanguage = {
+  uz: "Menu",
+  ru: "Меню",
+  en: "Menu",
 };

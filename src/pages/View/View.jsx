@@ -39,10 +39,6 @@ const View = () => {
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === params.id);
 
-  const mainImage = cottageView?.images?.find(
-    (e) => e.isMainImage === true
-  ).image;
-
   const childImage = [];
 
   cottageView?.images?.forEach((e) => {

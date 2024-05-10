@@ -4,14 +4,19 @@ import EyeSlash from "../../assets/images/eyeSlash.svg";
 
 import { useMutation } from "@tanstack/react-query";
 import { authUtils } from "../../utils/auth.utils";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 import Cleave from "cleave.js/react";
 
 import { Helmet } from "react-helmet-async";
+import { signInLanguage } from "../../configs/language";
+import { LanguageContext } from "../../helper/languageContext";
 
 const SignIn = () => {
+  // get Language
+  const { languageChange } = useContext(LanguageContext);
+
   const smsForm = useRef(null);
   const phoneForm = useRef(null);
   const smsInput = useRef(null);
@@ -66,7 +71,7 @@ const SignIn = () => {
         userId: phone?.data?.userId,
       });
     } else {
-      toastify.errorMessage("SMS code noto'gri !!!");
+      toastify.errorMessage(signInLanguage.smsError[languageChange]);
     }
   };
 
@@ -77,15 +82,18 @@ const SignIn = () => {
         <meta name="description" content="Sign In page" />
         <link rel="canonical" href="/signin" />
       </Helmet>
+
       <div className="signin">
         <div className="background">
           <div className="signin-box">
-            <h2 className="signin-header">Вход</h2>
+            <h2 className="signin-header">
+              {signInLanguage.login[languageChange]}
+            </h2>
             <form onSubmit={handleAuth} ref={phoneForm}>
               <div className="input-text">
                 <label className="d-flex flex-column gap-3">
                   <span className="text-light label-text ">
-                    Enter your phone:{" "}
+                    {signInLanguage.phone[languageChange]}:{" "}
                   </span>
                   <Cleave
                     options={{
@@ -102,7 +110,7 @@ const SignIn = () => {
                 </label>
               </div>
               <button type="submit" className="signin-submit mt-5">
-                Войти
+                {signInLanguage.enter[languageChange]}
               </button>
             </form>
 
@@ -113,7 +121,7 @@ const SignIn = () => {
                   type={`${passwordShow ? "password" : "text"}`}
                   ref={smsInput}
                   name="smsCode"
-                  placeholder="SMS code"
+                  placeholder={signInLanguage.smsCode[languageChange]}
                 />
                 <button
                   type="button"
@@ -128,7 +136,7 @@ const SignIn = () => {
                 </button>
               </div>
               <button type="submit" className="signin-submit mt-5">
-                Войти
+                {signInLanguage.enter[languageChange]}
               </button>
             </form>
           </div>
