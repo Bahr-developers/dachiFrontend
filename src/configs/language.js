@@ -231,3 +231,31 @@ export const FilterNotFound = {
   ru: "Коттедж не найден",
   en: "Cottage not found",
 };
+
+export const ViewPageLanguage = {
+  contactUser: {
+    uz: "Foydalanuvchi",
+    en: "User",
+    ru: "Пользователь",
+  },
+  announcement: {
+    uz: "Barcha e'lonlar",
+    ru: "Все объявления",
+    en: "All ads",
+  },
+  userContact: {
+    uz: "Telefon qilish",
+    ru: "Телефон",
+    en: "Phone",
+  },
+  aboutCottage: {
+    uz: "Dam olish maskani haqida",
+    ru: "О коттедже",
+    en: "About Cottage",
+  },
+  allComfort: {
+    uz: "Barcha qulayliklar",
+    ru: "Все удобства",
+    en: "All Comforts",
+  },
+};
