@@ -9,7 +9,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from "../../assets/images/edit.svg";
 import { useNavigate } from "react-router-dom";
-import { ProfileLeng } from "../../configs/language";
+import {
+  AddNewPageLanguage,
+  ProfileLeng,
+  ProfilePageLanguage,
+} from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
@@ -71,6 +75,7 @@ const User = () => {
   useEffect(() => {
     if (!user) navigation("/");
   }, [navigation]);
+
   if (!user) navigation("/");
 
   // User profile language
@@ -110,9 +115,7 @@ const User = () => {
                   />
                 </label>
                 <img
-                  className={
-                    userImg ? "image-user-single" : "d-none image-user-single"
-                  }
+                  className={userImg ? "image-user-single" : "d-none"}
                   ref={ismainImage}
                   src={`${IMG_BASE_URL}${userImg}`}
                   alt="img"
@@ -122,7 +125,9 @@ const User = () => {
               <div className="user-info-wrap">
                 <div className="user-r">
                   <label className="w-100">
-                    <span className="input-name-lable">Name</span>
+                    <span className="input-name-lable">
+                      {AddNewPageLanguage.name[languageChange]}
+                    </span>
                     <input
                       disabled={edit}
                       className="user-input"
@@ -133,7 +138,9 @@ const User = () => {
                     />
                   </label>
                   <label className="w-100">
-                    <span className="input-name-lable">Number</span>
+                    <span className="input-name-lable">
+                      {ProfilePageLanguage.number[languageChange]}
+                    </span>
                     <input
                       disabled={edit}
                       className="user-input"
@@ -154,10 +161,6 @@ const User = () => {
                       placeholder="Email"
                     />
                   </label>
-                  <p className="user-text d-none">
-                    Что бы вы подать объявлении вам нужно вводить ваш серии
-                    номер паспорта.
-                  </p>
                 </div>
                 <button
                   ref={saveData}
