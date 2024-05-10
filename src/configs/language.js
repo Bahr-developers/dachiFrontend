@@ -238,6 +238,33 @@ export const FilterNotFound = {
   en: "Cottage not found",
 };
 
+export const fovariteLang = {
+  uz: "Hozirda dachalar mavjud emas",
+  ru: "Нет любимых коттеджей  ",
+  en: "Don't have favorite cottages"
+}
+export const notificationLang = {
+  uz: "Bildirishnomalar",
+  ru: "Уведомления",
+  en: "Notifications"
+}
+export const userCottageSingle = {
+  uz: "ning dachalari",
+  ru: " kоттеджe",
+  en: "'s Cottage"
+}
+export const exitLang = [
+  {
+    uz: "Chiqish",
+    ru: "Выход",
+    en: "Exit"
+  },
+  {
+    uz: "Kirish",
+    ru: "Входить",
+    en: "Enter"
+  }
+]
 export const ViewPageLanguage = {
   contactUser: {
     uz: "Foydalanuvchi",

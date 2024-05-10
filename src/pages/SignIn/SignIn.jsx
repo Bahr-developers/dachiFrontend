@@ -33,7 +33,7 @@ const SignIn = () => {
 
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
-    onSuccess: (data) => {
+    onSuccess: () => {
       toastify.successMessage("Successfully logged in!");
       navigate("/home/profile/user");
     },
@@ -66,7 +66,7 @@ const SignIn = () => {
         userId: phone?.data?.userId,
       });
     } else {
-      toastify.errorMessage("SMS code notog`ri !!!");
+      toastify.errorMessage("SMS code noto'gri !!!");
     }
   };
 

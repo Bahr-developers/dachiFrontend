@@ -14,7 +14,7 @@ import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
-import { NavLeng, NavberLinks } from "../../configs/language";
+import { NavLeng, NavberLinks, exitLang } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 
 Modal.setAppElement("#root");
@@ -137,7 +137,7 @@ const Navbar = () => {
                       : "modal-nav-out d-block"
                   }
                 >
-                  Вход
+                  {exitLang[1][languageChange]}
                 </Link>
                 <button
                   onClick={logoutBtn}
@@ -148,7 +148,7 @@ const Navbar = () => {
                   }
                 >
                   <img src={GoOut} alt="" />
-                  Выход
+                  {exitLang[0][languageChange]}
                 </button>
               </div>
             </div>
@@ -233,7 +233,7 @@ const Navbar = () => {
                 accessToken && refreshToken ? "sign-in d-none" : "sign-in"
               }
             >
-              Вход
+              {exitLang[1][languageChange]}
             </Link>
 
             <div className="dropdown">
@@ -243,9 +243,7 @@ const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 ref={registered}
-                className={
-                  accessToken ? "sign-out btn btn-secondary" : "sign-out d-none"
-                }
+                className={accessToken ? "sign-out" : "sign-out d-none"}
               >
                 <img src={UserMenu} alt="" />
                 <div className="user-nav">

@@ -5,6 +5,9 @@ import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import "./User.css";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import Loader from "../../components/Loader/Loader";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
+import { userCottageSingle } from "../../configs/language";
 
 const UserCottageSingle = () => {
   const params = useParams();
@@ -12,7 +15,7 @@ const UserCottageSingle = () => {
   const cottage = ALL_DATA.useCottageAllUserId(params.id);
 
   const user = ALL_DATA.useCottageUserById(params.id);
-  console.log(user);
+  const {languageChange} = useContext(LanguageContext)
 
   if (user.isLoading) {
     return <Loader />;
@@ -32,7 +35,7 @@ const UserCottageSingle = () => {
             <p>+998{user.data?.phone}</p>
           </div>
         </div>
-        <h2 className="dacha-top mt-4 fs-2">{user?.data?.name}'s Cottage</h2>
+        <h2 className="dacha-top mt-4 fs-2">{user?.data?.name}{userCottageSingle[languageChange]}</h2>
         <div className="dacha-cards">
           {cottage.data?.length &&
             cottage.data
