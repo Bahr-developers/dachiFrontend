@@ -8,7 +8,7 @@ import { useContext, useRef, useState } from "react";
 import toastify from "../../utils/toastify";
 import { useNavigate } from "react-router-dom";
 import Cleave from "cleave.js/react";
-
+import { FaArrowLeft } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
 import { signInLanguage } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
@@ -19,8 +19,11 @@ const SignIn = () => {
 
   const smsForm = useRef(null);
   const phoneForm = useRef(null);
+  
   const smsInput = useRef(null);
   const navigate = useNavigate();
+  console.log(phoneForm.current.classList, "phone");
+  console.log(smsForm.current.classList, "sms");
 
   // eye btn
   const [passwordShow, setPasswordShow] = useState(true);
@@ -30,9 +33,17 @@ const SignIn = () => {
     onSuccess: (data) => {
       smsInput.current.value = data.smsCode;
       toastify.successMessage("Login success");
+      
+    setTimeout(() => {
+      phoneForm.current.classList.add("d-none");
+    }, 500);
+    setTimeout(() => {
+      smsForm.current.classList.remove("d-none");
+    }, 500);
     },
     onError: (err) => {
       console.log(err);
+      toastify.errorMessage("Raqam noto'g'ri kiritilgan")
     },
   });
 
@@ -53,12 +64,6 @@ const SignIn = () => {
     phone.mutate({
       phone: e.target.phonenumber.value.replaceAll(" ", "").slice(4),
     });
-    setTimeout(() => {
-      phoneForm.current.classList.add("d-none");
-    }, 500);
-    setTimeout(() => {
-      smsForm.current.classList.remove("d-none");
-    }, 500);
   };
 
   const handleLogin = (e) => {
@@ -74,6 +79,18 @@ const SignIn = () => {
       toastify.errorMessage(signInLanguage.smsError[languageChange]);
     }
   };
+  const backOneHandle = () => {
+    if(!phoneForm.current.classList.value){
+      navigate('/')
+    }else{
+      setTimeout(() => {
+        phoneForm.current.classList.remove("d-none");
+      }, 500);
+      setTimeout(() => {
+        smsForm.current.classList.add("d-none");
+      }, 500);
+    }
+  }
 
   return (
     <>
