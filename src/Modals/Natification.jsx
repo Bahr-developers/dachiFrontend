@@ -8,13 +8,16 @@ import { notificationUtils } from "../utils/notification.utilis";
 
 import { IoMdDoneAll } from "react-icons/io";
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { LanguageContext } from "../helper/languageContext";
+import { notificationLang } from "../configs/language";
 
 function Natification() {
   const querClient = useQueryClient();
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
   const location = useLocation();
   const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
-
+  const {languageChange} = useContext(LanguageContext)
   const notifications = notification?.filter((notif) => notif.status === "new");
 
   // edit Notification
@@ -92,7 +95,7 @@ function Natification() {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="staticBackdropLabel">
-                Notifications
+                {notificationLang[languageChange]}
               </h5>
               <button
                 type="button"

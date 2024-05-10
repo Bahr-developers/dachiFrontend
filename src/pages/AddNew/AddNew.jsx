@@ -14,16 +14,6 @@ import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
 
-async function getBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      resolve(reader.result.split(";base64,")[1]);
-    };
-    reader.onerror = reject;
-  });
-}
 // Images transform getbase64Full
 async function getBase64Full(file) {
   return new Promise((resolve, reject) => {

@@ -7,9 +7,13 @@ import Loader from "../../components/Loader/Loader";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
+import { fovariteLang } from "../../configs/language";
 
 const Favorite = () => {
   const cottage = ALL_DATA.useCottage();
+  const {languageChange} = useContext(LanguageContext)
 
   const favoriteCottage = cottage?.data?.filter(
     (cottage) => cottage.isLiked === true
@@ -48,7 +52,7 @@ const Favorite = () => {
           ) : (
             <>
               <div className="noneFavoriteCart border-warning border">
-                <p className="emptyText">Don't have favorite cottages</p>
+                <p className="emptyText">{fovariteLang[languageChange]}</p>
               </div>
             </>
           )}
