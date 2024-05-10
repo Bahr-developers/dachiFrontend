@@ -247,3 +247,15 @@ export const userCottageSingle = {
   ru: " kоттеджe",
   en: "'s Cottage"
 }
+export const exitLang = [
+  {
+    uz: "Chiqish",
+    ru: "Выход",
+    en: "Exit"
+  },
+  {
+    uz: "Kirish",
+    ru: "Входить",
+    en: "Enter"
+  }
+]

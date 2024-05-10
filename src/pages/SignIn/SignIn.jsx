@@ -33,7 +33,7 @@ const SignIn = () => {
 
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
-    onSuccess: (data) => {
+    onSuccess: () => {
       toastify.successMessage("Successfully logged in!");
       navigate("/home/profile/user");
     },
