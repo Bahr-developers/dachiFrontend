@@ -8,9 +8,7 @@ import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
 import { useContext, useState } from "react";
-
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +42,6 @@ const View = () => {
   const mainImage = cottageView?.images?.find(
     (e) => e.isMainImage === true
   ).image;
-
 
   const childImage = [];
 
@@ -144,8 +141,6 @@ const View = () => {
                     to={`/home/view/cottage/${cottageView?.user.id}`}
                     className="announCementLink"
                   >
-                    <span>Barcha e`lonlar</span>
-
                     <span>{ViewPageLanguage.announcement[languageChange]}</span>
 
                     <span>
@@ -188,9 +183,6 @@ const View = () => {
                   to={`/home/view/cottage/${cottageView?.user.id}`}
                   className="announCementLink"
                 >
-
-                  <span>Barcha e`lonlar</span>
-
                   <span>{ViewPageLanguage.announcement[languageChange]}</span>
 
                   <span>
