@@ -8,7 +8,7 @@ import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,22 +28,31 @@ import { IoIosArrowForward } from "react-icons/io";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
 import Dacha from "../../components/Dacha/Dacha";
+import { LanguageContext } from "../../helper/languageContext";
+import { ViewPageLanguage } from "../../configs/language";
 
 const View = () => {
   const params = useParams();
+
   const [viewCottage, setViewCottage] = useState(null);
 
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === params.id);
+
   const mainImage = cottageView?.images?.find(
     (e) => e.isMainImage === true
   ).image;
+
   const childImage = [];
+
   cottageView?.images?.forEach((e) => {
     if (e.isMainImage !== true) {
       childImage.push(e);
     }
   });
+
+  // get Language
+  const { languageChange } = useContext(LanguageContext);
 
   if (cottage.isLoading) return <Loader />;
 
@@ -111,7 +120,7 @@ const View = () => {
               </div>
               <div className="contact-me">
                 <div className="contactUSer">
-                  <p>FOYDALANUVCHI</p>
+                  <p>{ViewPageLanguage.contactUser[languageChange]}</p>
                   <div className="contact__user">
                     {cottageView?.user.image ? (
                       <LazyLoadImage
@@ -132,7 +141,7 @@ const View = () => {
                     to={`/home/view/cottage/${cottageView?.user.id}`}
                     className="announCementLink"
                   >
-                    <span>Barcha e'lonlar</span>
+                    <span>{ViewPageLanguage.announcement[languageChange]}</span>
                     <span>
                       <IoIosArrowForward size={22} />
                     </span>
@@ -144,13 +153,15 @@ const View = () => {
                 >
                   {" "}
                   <FiPhoneCall size={23} />{" "}
-                  <span className="fs-5 fw-bold">Telefon qilish</span>
+                  <span className="fs-5 fw-bold">
+                    {ViewPageLanguage.userContact[languageChange]}
+                  </span>
                 </Link>
               </div>
             </div>
             <div className="phoneCallMobile">
               <div className="contactUSer">
-                <p>FOYDALANUVCHI</p>
+                <p>{ViewPageLanguage.contactUser[languageChange]}</p>
                 <div className="contact__user">
                   {cottageView?.user.image ? (
                     <LazyLoadImage
@@ -171,7 +182,7 @@ const View = () => {
                   to={`/home/view/cottage/${cottageView?.user.id}`}
                   className="announCementLink"
                 >
-                  <span>Barcha e'lonlar</span>
+                  <span>{ViewPageLanguage.announcement[languageChange]}</span>
                   <span>
                     <IoIosArrowForward size={22} />
                   </span>
@@ -183,7 +194,9 @@ const View = () => {
               >
                 {" "}
                 <FiPhoneCall size={23} />{" "}
-                <span className="fs-5 fw-bold">Telefon qilish</span>
+                <span className="fs-5 fw-bold">
+                  {ViewPageLanguage.userContact[languageChange]}
+                </span>
               </Link>
             </div>
             <div className="view-main">
@@ -200,12 +213,16 @@ const View = () => {
                 <AiFillStar className="view-star" />
               </div>
 
-              <h3 className="view-h">Dam olish maskani haqida</h3>
+              <h3 className="view-h">
+                {ViewPageLanguage.aboutCottage[languageChange]}
+              </h3>
               <pre className="view-p">{cottageView?.description}</pre>
             </div>
 
             <div>
-              <p className="view-facility-header">Barcha qulayliklar</p>
+              <p className="view-facility-header">
+                {ViewPageLanguage.allComfort[languageChange]}
+              </p>
 
               <div className="view-facilitys">
                 {cottageView?.comforts?.length &&
