@@ -34,20 +34,16 @@ const Favorite = () => {
         <div className="favorite-cards">
           {favoriteCottage.length ? (
             <>
-              {favoriteCottage.map((cottage) => {
-                return (
-                  <>
-                    <DachaCard key={cottage.id} cottage={cottage} />
-                  </>
-                );
-              })}
-              {favoriteCottage.map((cottage) => {
-                return (
-                  <>
-                    <DachaMiniCard key={cottage.id} cottage={cottage} />
-                  </>
-                );
-              })}
+              {favoriteCottage.map((cottage) => (
+                <>
+                  <DachaCard key={cottage.id} cottage={cottage} />
+                </>
+              ))}
+              {favoriteCottage.map((cottage) => (
+                <>
+                  <DachaMiniCard key={cottage.id} cottage={cottage} />
+                </>
+              ))}
             </>
           ) : (
             <>

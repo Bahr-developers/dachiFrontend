@@ -507,3 +507,15 @@ export const MenuLanguage = {
   ru: "Меню",
   en: "Menu",
 };
+
+export const TariffModalLanguage = {
+  uz: "Tarif muvaffaqiyatli faollashtirildi",
+  ru: "Тариф успешно активирован",
+  en: "The tariff has been successfully activated",
+};
+
+export const VacationLanguage = {
+  uz: "Bu joylashuvda dacha yoq",
+  ru: "Коттеджа в этом месте нет.",
+  en: "Cottage is not available in this place",
+};

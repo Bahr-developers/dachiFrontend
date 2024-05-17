@@ -42,7 +42,7 @@ const User = () => {
   const [edit, setEdit] = useState(true);
 
   const userEdit = useMutation({
-    mutationFn: userUtils.patchUser,
+    mutationFn: userUtils.editUser,
     onSuccess: async () => {
       toastify.successMessage(signInLanguage.successLogin[languageChange]);
       localStorage.setItem("user", JSON.stringify(userData?.data));
@@ -68,7 +68,7 @@ const User = () => {
       email: e.target.email.value || "",
       name: e.target.name.value || "",
       image: e.target.userImage.files[0],
-      favoriteCottages: fovarite,
+      favoriteCottages: fovarite || [],
     });
   };
 
@@ -78,9 +78,7 @@ const User = () => {
   };
   useEffect(() => {
     if (!user) navigation("/");
-  }, [navigation]);
-
-  if (!user) navigation("/");
+  }, []);
 
   // User profile language
   const { languageChange } = useContext(LanguageContext);
@@ -92,6 +90,7 @@ const User = () => {
         <meta name="description" content="user page" />
         <link rel="canonical" href="/user" />
       </Helmet>
+
       <div>
         <div className="container">
           <BreacdCrumbs />

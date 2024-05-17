@@ -1,6 +1,6 @@
 import "./DachaCard.css";
 
-import { FiHeart } from "react-icons/fi";
+import { IoMdHeart } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { useQueryClient } from "@tanstack/react-query";
@@ -9,7 +9,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 import { CottageLeng } from "../../configs/language";
-import PropTypes from "prop-types";
 
 const DachaCard = (props) => {
   const queryClient = useQueryClient();
@@ -59,7 +58,7 @@ const DachaCard = (props) => {
         <div
           className={
             props.cottage.cottageStatus === "progress"
-              ? "here-icons-wrap d-none"
+              ? "d-none"
               : "here-icons-wrap"
           }
         >
@@ -69,11 +68,9 @@ const DachaCard = (props) => {
               props.cottage.isLiked ? "dacha-card-like-active" : ""
             }`}
           >
-            <FiHeart
-              className={`dacha-heart-icon ${
-                props.cottage.isLiked ? "dacha-heart-icon-active" : ""
-              }`}
-            />
+            <span>
+              <IoMdHeart size={30} />
+            </span>
           </div>
         </div>
         <p
@@ -117,26 +114,3 @@ const DachaCard = (props) => {
 };
 
 export default DachaCard;
-
-DachaCard.propTypes = {
-  cottage: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        isMainImage: PropTypes.bool.isRequired,
-        image: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    cottageStatus: PropTypes.string.isRequired,
-    isLiked: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    region: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-    place: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-    price: PropTypes.number.isRequired,
-    priceWeekend: PropTypes.number.isRequired,
-  }).isRequired,
-};

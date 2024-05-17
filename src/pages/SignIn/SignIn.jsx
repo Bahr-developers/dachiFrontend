@@ -1,6 +1,6 @@
 import "./SignIn.css";
-import Eye from "../../assets/images/eye.svg";
-import EyeSlash from "../../assets/images/eyeSlash.svg";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 import { useMutation } from "@tanstack/react-query";
 import { authUtils } from "../../utils/auth.utils";
@@ -22,8 +22,6 @@ const SignIn = () => {
 
   const smsInput = useRef(null);
   const navigate = useNavigate();
-  console.log(phoneForm.current.classList, "phone");
-  console.log(smsForm.current.classList, "sms");
 
   // eye btn
   const [passwordShow, setPasswordShow] = useState(true);
@@ -60,7 +58,6 @@ const SignIn = () => {
 
   const handleAuth = (e) => {
     e.preventDefault();
-    console.log(e.target.phonenumber.value.replaceAll(" ", "").slice(4));
     phone.mutate({
       phone: e.target.phonenumber.value.replaceAll(" ", "").slice(4),
     });
@@ -79,6 +76,7 @@ const SignIn = () => {
       toastify.errorMessage(signInLanguage.smsError[languageChange]);
     }
   };
+
   const backOneHandle = () => {
     if (!phoneForm.current.classList.value) {
       navigate("/");
@@ -145,14 +143,14 @@ const SignIn = () => {
                 />
                 <button
                   type="button"
-                  className="passwordBtn"
+                  className="passwordBtn text-white"
                   onClick={() => setPasswordShow((prev) => !prev)}
                 >
-                  <img
-                    src={passwordShow ? Eye : EyeSlash}
-                    alt="password"
-                    className="passwordIcon"
-                  />
+                  {passwordShow ? (
+                    <FaEye size={25} />
+                  ) : (
+                    <FaEyeSlash size={25} />
+                  )}
                 </button>
               </div>
               <button type="submit" className="signin-submit mt-5">

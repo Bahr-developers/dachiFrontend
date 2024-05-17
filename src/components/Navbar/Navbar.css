@@ -132,10 +132,6 @@
   font-size: 14px;
 }
 
-.hamburgerClassname {
-  display: none;
-}
-
 .sign-in {
   margin: 0;
   padding: 15px 57px;
@@ -358,10 +354,12 @@
   display: none;
 }
 
+.hamburgerNone {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 576px) {
-  .hamburgerClassname {
-    display: block;
-  }
   .navbar {
     margin: 0;
     padding: 10px 0;
@@ -440,11 +438,16 @@
   transition: width 500ms ease-in-out, opacity 500ms ease-in-out;
 }
 
-.hamburgerMenuActive {
-  width: 70%;
-  height: 100vh;
-  opacity: 1;
+.BgMenuActive {
+  position: absolute;
 }
+
+.hamburgerMenuActive {
+  height: 100vh;
+  transition: all ease 0.6s;
+  transform: translateX(0px);
+}
+
 .overlayMenuActive {
   position: fixed;
   top: 0;
@@ -457,9 +460,7 @@
 }
 
 .hamburgerMenuClose {
-  pointer-events: none;
-  opacity: 0;
-  width: 50%;
+  transform: translateX(-300px);
 }
 
 .modal-nav-menu {

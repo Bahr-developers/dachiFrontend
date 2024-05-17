@@ -8,6 +8,7 @@ const custimAxios = axios.create({
   headers: {
     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
   },
+  withCredentials: true,
 });
 
 custimAxios.interceptors.response.use(

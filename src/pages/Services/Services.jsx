@@ -32,23 +32,21 @@ const Services = () => {
         </h2>
         <div className="services-wrap">
           {services.data?.length &&
-            services.data.map((el) => {
-              return (
-                <div key={el.id} className="services-card">
-                  <LazyLoadImage
-                    effect="bulr"
-                    src={`${IMG_BASE_URL}${el.images[0]}`}
-                    alt={el.name}
-                    className="services-caer-img"
-                  />
-                  <h4 className="services-card-name">{el.name}</h4>
-                  <p className="services-card-description">{el.description}</p>
-                  <Link className="services-card-link" to="/tarif">
-                    {ServicesPageLanguage.viewTariff[languageChange]}
-                  </Link>
-                </div>
-              );
-            })}
+            services.data.map((el) => (
+              <div key={el.id} className="services-card">
+                <LazyLoadImage
+                  effect="blur"
+                  src={`${IMG_BASE_URL}${el.images[0]}`}
+                  alt={el.name}
+                  className="services-caer-img"
+                />
+                <h4 className="services-card-name">{el.name}</h4>
+                <p className="services-card-description">{el.description}</p>
+                <Link className="services-card-link" to="/tarif">
+                  {ServicesPageLanguage.viewTariff[languageChange]}
+                </Link>
+              </div>
+            ))}
         </div>
       </div>
       <MiniNaw />

@@ -7,7 +7,6 @@ export const ServiceUtils = {
         "accept-language": localStorage.getItem("language"),
       },
     });
-
     return data;
   },
 };

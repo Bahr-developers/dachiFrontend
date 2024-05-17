@@ -21,6 +21,7 @@ function Announcoment() {
         <meta name="description" content="Announcoment page" />
         <link rel="canonical" href="/announcoment" />
       </Helmet>
+
       <div className="announcoment">
         <BreacdCrumbs />
         <div className="container">
@@ -32,17 +33,14 @@ function Announcoment() {
                 </h2>
                 <div className="dacha-cards">
                   {userCottage.data?.length &&
-                    userCottage.data.map((e) => {
-                      console.log(e);
-                      return (
-                        <DachaCard key={e.id} cottage={e} btn="Подробное" />
-                      );
-                    })}
+                    userCottage.data.map((e) => (
+                      <DachaCard key={e.id} cottage={e} btn="Подробное" />
+                    ))}
 
                   {userCottage.data?.length &&
-                    userCottage.data.map((e) => {
-                      return <DachaMiniCard key={e.id} cottage={e} />;
-                    })}
+                    userCottage.data.map((e) => (
+                      <DachaMiniCard key={e.id} cottage={e} />
+                    ))}
                 </div>
               </>
             ) : (

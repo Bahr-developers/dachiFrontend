@@ -78,15 +78,9 @@ export const cottageUtils = {
   }) => {
     try {
       const formData = new FormData();
-      for (const el of comforts) {
-        formData.append("comforts", el);
-      }
-      for (const el of cottageType) {
-        formData.append("cottageType", el);
-      }
-      for (const el of images) {
-        formData.append("images", el);
-      }
+      comforts.forEach((el) => formData.append("comforts", el));
+      cottageType.forEach((el) => formData.append("cottageType", el));
+      images.forEach((img) => formData.append("images", img));
       formData.append("name", name);
       formData.append("mainImage", mainImage);
       formData.append("placeId", placeId);

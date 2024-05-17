@@ -7,12 +7,17 @@ import "./Vacation.css";
 import { Helmet } from "react-helmet-async";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import Loader from "../../components/Loader/Loader";
+import { VacationLanguage } from "../../configs/language";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
 
 function Vacation() {
-  const params = useParams();
-  const cottages = ALL_DATA.useCottageByPlace(params?.id);
+  const { id } = useParams();
+  const cottages = ALL_DATA.useCottageByPlace(id);
   const place = ALL_DATA.usePlace();
-  const placeName = place?.data?.find((e) => e.id === params?.id).name;
+  const placeName = place?.data?.find((e) => e.id === id).name;
+
+  const { languageChange } = useContext(LanguageContext);
 
   if (cottages.isLoading) return <Loader />;
 
@@ -31,21 +36,21 @@ function Vacation() {
             <>
               <div className="place-card-sort-big">
                 {cottages?.data?.length &&
-                  cottages.data.map((e) => {
-                    return <DachaCard key={e.id} cottage={e} btn="Подробное" />;
-                  })}
+                  cottages.data.map((e) => (
+                    <DachaCard key={e.id} cottage={e} />
+                  ))}
               </div>
 
               <div className="place-card-mini-sort">
                 {cottages?.data?.length &&
-                  cottages.data.map((e) => {
-                    return <DachaMiniCard key={e.id} cottage={e} />;
-                  })}
+                  cottages.data.map((e) => (
+                    <DachaMiniCard key={e.id} cottage={e} />
+                  ))}
               </div>
             </>
           ) : (
             <div className="nonePlaceCart border-warning border">
-              <p className="p-0 m-0">Bu joylashuvda dacha yoq</p>
+              <p className="p-0 m-0">{VacationLanguage[languageChange]}</p>
             </div>
           )}
         </div>

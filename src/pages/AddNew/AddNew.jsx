@@ -225,13 +225,11 @@ const AddNew = () => {
                     className="addnew-select form-select w-100"
                   >
                     {region.data?.length &&
-                      region.data.map((e) => {
-                        return (
-                          <option key={e.id} value={e.id}>
-                            {e.name}
-                          </option>
-                        );
-                      })}
+                      region.data.map((e) => (
+                        <option key={e.id} value={e.id}>
+                          {e.name}
+                        </option>
+                      ))}
                   </select>
                 </div>
 
@@ -244,13 +242,11 @@ const AddNew = () => {
                     className="addnew-select  d-block form-select w-100"
                   >
                     {place.data?.length &&
-                      place.data.map((e) => {
-                        return (
-                          <option key={e.id} name="place" value={e.id}>
-                            {e.name}
-                          </option>
-                        );
-                      })}
+                      place.data.map((e) => (
+                        <option key={e.id} name="place" value={e.id}>
+                          {e.name}
+                        </option>
+                      ))}
                   </select>
                 </div>
               </div>
@@ -276,20 +272,18 @@ const AddNew = () => {
               </h3>
               <div className="addnew-inner">
                 {cottageType.data?.length &&
-                  cottageType.data.map((e) => {
-                    return (
-                      <label key={e.id} className="addnew-inner-check">
-                        <input
-                          className="addnew-check form-check-input"
-                          type="checkbox"
-                          value={e.id}
-                          name="cottagetype"
-                          onChange={handlChoseCottageType}
-                        />
-                        <span>{e.name}</span>
-                      </label>
-                    );
-                  })}
+                  cottageType.data.map((e) => (
+                    <label key={e.id} className="addnew-inner-check">
+                      <input
+                        className="addnew-check form-check-input"
+                        type="checkbox"
+                        value={e.id}
+                        name="cottagetype"
+                        onChange={handlChoseCottageType}
+                      />
+                      <span>{e.name}</span>
+                    </label>
+                  ))}
               </div>
             </div>
 

@@ -30,6 +30,7 @@ import { Helmet } from "react-helmet-async";
 import Dacha from "../../components/Dacha/Dacha";
 import { LanguageContext } from "../../helper/languageContext";
 import { ViewPageLanguage } from "../../configs/language";
+import ViewImages from "./ViewImages";
 
 const View = () => {
   const params = useParams();
@@ -66,31 +67,10 @@ const View = () => {
           <div className="view">
             <div className="imag-and-desc-wrap w-100 gap-3 d-flex">
               <div className="cottage-images">
-                <Swiper
-                  style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                  }}
-                  loop={true}
-                  spaceBetween={10}
-                  navigation={true}
-                  thumbs={{ swiper: viewCottage }}
-                  modules={[FreeMode, Navigation, Thumbs]}
-                  className="mySwiper2"
-                >
-                  {cottageView?.images &&
-                    cottageView.images.map((img) => {
-                      return (
-                        <SwiperSlide key={img.id}>
-                          <img
-                            className="view-image"
-                            src={`${IMG_BASE_URL}${img.image}`}
-                            alt="img"
-                          />
-                        </SwiperSlide>
-                      );
-                    })}
-                </Swiper>
+                <ViewImages
+                  cottageView={cottageView}
+                  viewCottage={viewCottage}
+                />
                 <Swiper
                   onSwiper={setViewCottage}
                   spaceBetween={10}
@@ -101,17 +81,15 @@ const View = () => {
                   className="mySwiper"
                 >
                   {cottageView?.images &&
-                    cottageView.images.map((img) => {
-                      return (
-                        <SwiperSlide key={img.id}>
-                          <img
-                            className="view-image-child"
-                            src={`${IMG_BASE_URL}${img.image}`}
-                            alt="img"
-                          />
-                        </SwiperSlide>
-                      );
-                    })}
+                    cottageView.images.map((img) => (
+                      <SwiperSlide key={img.id}>
+                        <img
+                          className="view-image-child"
+                          src={`${IMG_BASE_URL}${img.image}`}
+                          alt="img"
+                        />
+                      </SwiperSlide>
+                    ))}
                 </Swiper>
               </div>
               <div className="contact-me">

@@ -4,7 +4,6 @@ import DachaMiniCard from "../DachaMiniCard/DachaMiniCard";
 import "./FilterSection.css";
 import { LanguageContext } from "../../helper/languageContext";
 import { FilterSectionLeng } from "../../configs/language";
-import PropTypes from "prop-types";
 
 function FilterSEction({ cottageFilter }) {
   const cottage = cottageFilter;
@@ -46,14 +45,3 @@ function FilterSEction({ cottageFilter }) {
 }
 
 export default FilterSEction;
-
-FilterSEction.propTypes = {
-  cottageFilter: PropTypes.shape({
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        cottageStatus: PropTypes.string.isRequired,
-      })
-    ),
-  }),
-};

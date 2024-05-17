@@ -46,17 +46,11 @@ const Places = () => {
           modules={[Keyboard, Navigation]}
         >
           {places.data?.length &&
-            places?.data.map((place) => {
-              return (
-                <SwiperSlide key={place.id} className="swiper-slide">
-                  <PlacesCard
-                    id={place.id}
-                    name={place.name}
-                    img={place.image}
-                  />
-                </SwiperSlide>
-              );
-            })}
+            places?.data.map((place) => (
+              <SwiperSlide key={place.id} className="swiper-slide">
+                <PlacesCard id={place.id} name={place.name} img={place.image} />
+              </SwiperSlide>
+            ))}
         </Swiper>
         {/* Swiper mini */}
         <Swiper
@@ -77,17 +71,11 @@ const Places = () => {
           modules={[Keyboard, Navigation]}
         >
           {places.data?.length &&
-            places?.data.map((place) => {
-              return (
-                <SwiperSlide key={place.id} className="swiper-slide-place">
-                  <PlacesCard
-                    id={place.id}
-                    name={place.name}
-                    img={place.image}
-                  />
-                </SwiperSlide>
-              );
-            })}
+            places?.data.map((place) => (
+              <SwiperSlide key={place.id} className="swiper-slide-place">
+                <PlacesCard id={place.id} name={place.name} img={place.image} />
+              </SwiperSlide>
+            ))}
         </Swiper>
         <div className="placeNavigator">
           <div ref={prevPlaceElm} className="nextPrevNavigator">

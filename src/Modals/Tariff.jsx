@@ -4,9 +4,8 @@ import { TariffUtils } from "../utils/tariff.utilis";
 import { QUERY_KEYS } from "../Query/query-keys";
 import toastify from "../utils/toastify";
 import { ALL_DATA } from "../Query/get_all";
-import { TariffPageLanguage } from "../configs/language";
+import { TariffModalLanguage, TariffPageLanguage } from "../configs/language";
 import { LanguageContext } from "../helper/languageContext";
-import PropTypes from "prop-types";
 
 const Tariff = (props) => {
   const userCottage = ALL_DATA.useCottageUserId();
@@ -19,11 +18,11 @@ const Tariff = (props) => {
     mutationFn: TariffUtils.addTariffActive,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.tariff] });
-      toastify.successMessage("Muvaffaqiyatli ulandi");
+      toastify.successMessage(TariffModalLanguage[languageChange]);
       setIsOpen(false);
     },
     onError: (err) => {
-      toastify.errorMessage(err.response.data.message.message);
+      toastify.errorMessage(err?.response?.data?.message?.message);
       console.error(err);
     },
   });
@@ -105,13 +104,11 @@ const Tariff = (props) => {
                   {TariffPageLanguage.selectCottage[languageChange]}
                 </option>
                 {userCottage.data?.length &&
-                  userCottage.data.map((el) => {
-                    return (
-                      <option key={el.id} value={el.id} className="">
-                        {el.name}
-                      </option>
-                    );
-                  })}
+                  userCottage.data.map((el) => (
+                    <option key={el.id} value={el.id} className="">
+                      {el.name}
+                    </option>
+                  ))}
               </select>
               <button
                 type="submit"
@@ -126,12 +123,6 @@ const Tariff = (props) => {
       </div>
     </div>
   );
-};
-
-// Corrected PropTypes definition
-Tariff.propTypes = {
-  tariff: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 export default Tariff;

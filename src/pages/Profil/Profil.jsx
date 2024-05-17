@@ -17,6 +17,7 @@ const Profil = () => {
         <meta name="description" content="profil page" />
         <link rel="canonical" href="/profil" />
       </Helmet>
+
       <div className="container">
         <div className="profil-wrap">
           <Link to="/home/profile/user" className="profil-card user-card-mini">

@@ -1,5 +1,4 @@
 import "./DachaMiniCard.css";
-import { FiHeart } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useQueryClient } from "@tanstack/react-query";
@@ -8,8 +7,7 @@ import { QUERY_KEYS } from "../../Query/query-keys";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
-
-import PropTypes from "prop-types";
+import { IoMdHeart } from "react-icons/io";
 
 const DachaMiniCard = (props) => {
   const mainImg = props.cottage.images.find(
@@ -23,7 +21,7 @@ const DachaMiniCard = (props) => {
 
   const navigate = useNavigate();
 
-  const handlLiked = (id) => {
+  const handleLike = (id) => {
     if (accessToken && refreshToken) {
       const likedCottage = JSON.parse(localStorage.getItem("liked")) || [];
       const isExist = likedCottage.includes(id);
@@ -72,7 +70,7 @@ const DachaMiniCard = (props) => {
           ></div>
         </div>
         <div className="mini-card-info">
-          <h5 className="dmc-name oswald">{props.cottage.name}</h5>
+          <h5 className="dmc-name">{props.cottage.name}</h5>
           <p className="dmc-text">
             {props.cottage.region.name} {props.cottage.place.name}
           </p>
@@ -87,16 +85,14 @@ const DachaMiniCard = (props) => {
         }
       >
         <div
-          onClick={() => handlLiked(props.cottage.id)}
+          onClick={() => handleLike(props?.cottage?.id)}
           className={`dmc-like ${
-            props.cottage?.isLiked === true ? "dmc-like-active" : ""
+            props.cottage.isLiked ? "dmc-like-active" : ""
           }`}
         >
-          <FiHeart
-            className={`dacha-mini-heart-icon ${
-              props.cottage.isLiked === true ? "dacha-mini-heart-active" : ""
-            }`}
-          />
+          <span>
+            <IoMdHeart size={18} />
+          </span>
         </div>
       </div>
     </div>
@@ -104,25 +100,3 @@ const DachaMiniCard = (props) => {
 };
 
 export default DachaMiniCard;
-
-DachaMiniCard.propTypes = {
-  cottage: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        isMainImage: PropTypes.bool.isRequired,
-        image: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    cottageStatus: PropTypes.string.isRequired,
-    isLiked: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    region: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-    place: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-    price: PropTypes.number.isRequired,
-  }).isRequired,
-};
