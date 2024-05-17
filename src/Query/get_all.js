@@ -94,18 +94,18 @@ export const ALL_DATA = {
     }
     return { ...filters };
   },
-  useCottageByType: (type) => {
-    return useQuery({
+  useCottageByType: (type) =>
+    useQuery({
       queryKey: [QUERY_KEYS.cottageType_by_Id],
       queryFn: async () => await cottageUtils.getCottageType(type),
-    });
-  },
-  useCottageUserId: () => {
-    return useQuery({
+    }),
+
+  useCottageUserId: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.cottage_by_UserId],
       queryFn: cottageUtils.getCottageUser,
-    });
-  },
+    }),
+
   useCottageAllUserId: (userId) => {
     const userCottage = useQuery({
       queryKey: [QUERY_KEYS.cottageUserAllId],
@@ -132,88 +132,88 @@ export const ALL_DATA = {
     }
     return { ...userCottage };
   },
-  useLanguage() {
-    return useQuery({
+
+  useLanguage: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.languages],
       queryFn: languageUtils.getLanguage,
-    });
-  },
-  usePlace() {
-    return useQuery({
+    }),
+
+  usePlace: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.places],
       queryFn: placeUtils.getPlace,
-    });
-  },
-  useRegion() {
-    return useQuery({
+    }),
+
+  useRegion: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.regions],
       queryFn: regionUtils.getRegion,
-    });
-  },
-  useComforts() {
-    return useQuery({
+    }),
+
+  useComforts: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.comforts],
       queryFn: comfortUtils.getComfort,
-    });
-  },
-  useCottageType: () => {
-    return useQuery({
+    }),
+
+  useCottageType: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.cottageType],
       queryFn: cottageTypeUtils.getCottageType,
-    });
-  },
-  useUsers: () => {
-    return useQuery({
+    }),
+
+  useUsers: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.users],
       queryFn: userUtils.getUsers,
-    });
-  },
-  useSingleUser: () => {
-    return useQuery({
+    }),
+
+  useSingleUser: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.users],
       queryFn: userUtils.getSingleUser,
-    });
-  },
-  useCottageUserById: (userID) => {
-    return useQuery({
+    }),
+
+  useCottageUserById: (userID) =>
+    useQuery({
       queryKey: [QUERY_KEYS.userCottageUser],
       queryFn: async () => userUtils.getCottageUserById(userID),
-    });
-  },
-  useNotificationUser: (userId) => {
-    return useQuery({
+    }),
+
+  useNotificationUser: (userId) =>
+    useQuery({
       queryKey: [QUERY_KEYS.notification, userId],
       queryFn: async () => {
         const data = await notificationUtils.getUserNotification(userId);
         return data;
       },
-    });
-  },
-  useAllNotification: () => {
-    return useQuery({
+    }),
+
+  useAllNotification: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.all_notification],
       queryFn: async () => {
         const data = await notificationUtils.getNotification();
         return data;
       },
-    });
-  },
-  useServices: () => {
-    return useQuery({
+    }),
+
+  useServices: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.services],
       queryFn: async () => {
         const data = await ServiceUtils.getService();
         return data;
       },
-    });
-  },
-  useTariff: () => {
-    return useQuery({
+    }),
+
+  useTariff: () =>
+    useQuery({
       queryKey: [QUERY_KEYS.tariff],
       queryFn: async () => {
         const data = await TariffUtils.getTariff();
         return data;
       },
-    });
-  },
+    }),
 };

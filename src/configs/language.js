@@ -519,3 +519,9 @@ export const VacationLanguage = {
   ru: "Коттеджа в этом месте нет.",
   en: "Cottage is not available in this place",
 };
+
+export const ViewLanguage = {
+  uz: "viloyati",
+  ru: "область",
+  en: "region",
+};

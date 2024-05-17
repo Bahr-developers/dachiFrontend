@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { LanguageContext } from "./helper/languageContext";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
@@ -18,7 +18,6 @@ const PayDetail = lazy(() => import("./pages/PayDetail/PayDetail"));
 const Favorite = lazy(() => import("./pages/Favorite/Favorite"));
 const Add = lazy(() => import("./pages/Add/Add"));
 const AddNew = lazy(() => import("./pages/AddNew/AddNew"));
-const Protected = lazy(() => import("./components/Protected"));
 const Vacation = lazy(() => import("./pages/Vacation/Vacation"));
 const Announcoment = lazy(() => import("./pages/Announcement/Announcoment"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
@@ -34,6 +33,13 @@ function App() {
   const [languageChange, setLanguageChange] = useState(
     localStorage.getItem("language")
   );
+
+  const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+
+  useEffect(() => {
+    if (!user) navigate("/");
+  }, []);
 
   const queryClient = useQueryClient();
 
@@ -55,123 +61,34 @@ function App() {
       <LanguageContext.Provider value={{ languageChange, toggleLanguage }}>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/home" element={<Home/>} />
+            <Route path="/home" element={<Home />} />
             <Route path="/" element={<Home />}>
               <Route path="home/contact" element={<Contact />} />
-              <Route
-                path="home/favorite"
-                element={
-                  <Protected>
-                    <Favorite />
-                  </Protected>
-                }
-              />
+              <Route path="home/favorite" element={<Favorite />} />
               <Route path="home/profile/user" element={<User />} />
-              <Route
-                path="home/filter"
-                element={
-                  <Protected>
-                    <Filter />
-                  </Protected>
-                }
-              />
-              <Route
-                path="home/profile"
-                element={
-                  <Protected>
-                    <Profil />
-                  </Protected>
-                }
-              />
-              <Route
-                path="home/profile/add"
-                element={
-                  <Protected>
-                    <Add />
-                  </Protected>
-                }
-              />
+              <Route path="home/filter" element={<Filter />} />
+              <Route path="home/profile" element={<Profil />} />
+              <Route path="home/profile/add" element={<Add />} />
               <Route path="home/profile/services" element={<Services />} />
-              <Route
-                path="home/add-new"
-                element={
-                  <Protected>
-                    <AddNew />
-                  </Protected>
-                }
-              />
+              <Route path="home/add-new" element={<AddNew />} />
               <Route
                 path="home/profile/announcement"
-                element={
-                  <Protected>
-                    <Announcoment />
-                  </Protected>
-                }
+                element={<Announcoment />}
               />
-              <Route
-                path="home/view/:id"
-                element={
-                  <Protected>
-                    <View />
-                  </Protected>
-                }
-              />
+              <Route path="home/view/:id" element={<View />} />
               <Route path="home/view" element={<ViewCottage />} />
               <Route
                 path="home/view/cottage/:id"
                 element={<UserCottageSingle />}
               />
-              <Route
-                path="home/vacation/:id"
-                element={
-                  <Protected>
-                    <Vacation />
-                  </Protected>
-                }
-              />
-              <Route
-                path="home/vacation"
-                element={
-                  <Protected>
-                    <VacationPage />
-                  </Protected>
-                }
-              />
+              <Route path="home/vacation/:id" element={<Vacation />} />
+              <Route path="home/vacation" element={<VacationPage />} />
             </Route>
             <Route path="/sign-in" element={<SignIn />} />
-            <Route
-              path="/tarif"
-              element={
-                <Protected>
-                  {" "}
-                  <Tarif />
-                </Protected>
-              }
-            />
-            <Route
-              path="/pay"
-              element={
-                <Protected>
-                  <Pay />
-                </Protected>
-              }
-            />
-            <Route
-              path="/to-pay"
-              element={
-                <Protected>
-                  <ToPay />
-                </Protected>
-              }
-            />
-            <Route
-              path="/pay-detail"
-              element={
-                <Protected>
-                  <PayDetail />
-                </Protected>
-              }
-            />
+            <Route path="/tarif" element={<Tarif />} />
+            <Route path="/pay" element={<Pay />} />
+            <Route path="/to-pay" element={<ToPay />} />
+            <Route path="/pay-detail" element={<PayDetail />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>

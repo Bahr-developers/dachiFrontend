@@ -79,15 +79,9 @@ function Natification() {
             </div>
             <div className="modal-body">
               {notification?.length &&
-                notification.map((mes) => {
-                  return (
-                    <NotificationItam
-                      mes={mes}
-                      key={mes.id}
-                      userId={user?.id}
-                    />
-                  );
-                })}
+                notification.map((mes) => (
+                  <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
+                ))}
             </div>
           </div>
         </div>

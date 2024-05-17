@@ -5,10 +5,9 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useMutation } from "@tanstack/react-query";
 import { userUtils } from "../../utils/user.utils";
 import toastify from "../../utils/toastify";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from "../../assets/images/edit.svg";
-import { useNavigate } from "react-router-dom";
 import {
   AddNewPageLanguage,
   ProfileLeng,
@@ -38,7 +37,6 @@ const User = () => {
   const ismainImage = useRef(null);
   const saveData = useRef(null);
   const editImage = useRef(null);
-  const navigation = useNavigate();
   const [edit, setEdit] = useState(true);
 
   const userEdit = useMutation({
@@ -76,9 +74,6 @@ const User = () => {
     ismainImage.current.src = await getBase64Full(e.target.files[0]);
     ismainImage.current.classList.remove("d-none");
   };
-  useEffect(() => {
-    if (!user) navigation("/");
-  }, []);
 
   // User profile language
   const { languageChange } = useContext(LanguageContext);
