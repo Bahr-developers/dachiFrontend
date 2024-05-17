@@ -15,6 +15,8 @@ import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
 import { AddNewPageLanguage } from "../../configs/language";
+import { QUERY_KEYS } from "../../Query/query-keys";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // Images transform getbase64Full
 async function getBase64Full(file) {
@@ -55,7 +57,7 @@ const AddNew = () => {
   const cottage = useMutation({
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["cotteges"] });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.cottages] });
       toastify.successMessage(
         AddNewPageLanguage.cottageSuccess[languageChange]
       );
@@ -119,7 +121,7 @@ const AddNew = () => {
       priceWeekend: +e.target.priceweekend.value,
       cottageType: cottageInfo.response,
       comforts: cottageComforts.response,
-      description: e.target.discription.value,
+      description: e.target.description.value,
       lattitude: "" || undefined,
       longitude: "" || undefined,
     });
@@ -293,25 +295,24 @@ const AddNew = () => {
 
             <div className="addnew-objects">
               {comforts.data?.length &&
-                comforts.data.map((e) => {
-                  return (
-                    <label key={e.id} className="addnew-object">
-                      <input
-                        className="addnew-check"
-                        type="checkbox"
-                        value={e.id}
-                        onChange={handleCottageComforts}
-                      />
-                      <img
-                        className="bg-white rounded-1"
-                        width={20}
-                        src={`${IMG_BASE_URL}${e.image}`}
-                        alt="img"
-                      />
-                      <p className="addnew-object-text">{e.name}</p>
-                    </label>
-                  );
-                })}
+                comforts.data.map((e) => (
+                  <label key={e.id} className="addnew-object">
+                    <input
+                      className="addnew-check"
+                      type="checkbox"
+                      value={e.id}
+                      onChange={handleCottageComforts}
+                    />
+                    <LazyLoadImage
+                      className="bg-white rounded-1"
+                      width={20}
+                      height={20}
+                      src={`${IMG_BASE_URL}${e.image}`}
+                      alt="img"
+                    />
+                    <p className="addnew-object-text">{e.name}</p>
+                  </label>
+                ))}
             </div>
 
             <h3 className="addnew-header">
@@ -319,7 +320,7 @@ const AddNew = () => {
             </h3>
             <textarea
               type="text form-control"
-              name="discription"
+              name="description"
               className="addnew-message"
               placeholder={AddNewPageLanguage.shortDescription[languageChange]}
             />
