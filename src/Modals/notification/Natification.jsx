@@ -18,7 +18,7 @@ function Natification() {
   return (
     <>
       <button
-        className="btn notificationsBtn"
+        className="border-0 btn notificationsBtn"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
@@ -78,7 +78,7 @@ function Natification() {
               ></button>
             </div>
             <div className="modal-body">
-              {notification?.length &&
+              {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p> :
                 notification.map((mes) => (
                   <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
                 ))}
