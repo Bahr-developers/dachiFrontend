@@ -5,7 +5,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
-import { notificationLang } from "../../configs/language";
+import { notificationLang, notificationLanguage } from "../../configs/language";
 import NotificationItam from "./notificationItam";
 
 function Natification() {
@@ -78,10 +78,15 @@ function Natification() {
               ></button>
             </div>
             <div className="modal-body">
-              {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p> :
+              {!notification?.length ? (
+                <p className="text-black noneFavoriteCart border-warning border">
+                  {notificationLanguage[languageChange]}
+                </p>
+              ) : (
                 notification.map((mes) => (
                   <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
-                ))}
+                ))
+              )}
             </div>
           </div>
         </div>
