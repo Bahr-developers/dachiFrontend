@@ -114,7 +114,7 @@ const Header = () => {
         />
       </header>
 
-      <FilterSEction cottageFilter={cottageFilter} />
+      <FilterSEction filter={filter} cottageFilter={cottageFilter} />
     </>
   );
 };

@@ -35,6 +35,7 @@ const Places = () => {
           keyboard={{
             enabled: true,
           }}
+          loop={true}
           navigation={{
             prevEl: prevPlaceElm.current,
             nextEl: nextPlaceElm.current,
@@ -60,6 +61,7 @@ const Places = () => {
           keyboard={{
             enabled: true,
           }}
+          loop={true}
           navigation={{
             prevEl: prevPlaceElm.current,
             nextEl: nextPlaceElm.current,
