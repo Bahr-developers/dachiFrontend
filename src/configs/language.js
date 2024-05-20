@@ -525,3 +525,8 @@ export const ViewLanguage = {
   ru: "область",
   en: "region",
 };
+export const notPlace = {
+  uz: "Bu dam olish maskanida dacha topilmadi ",
+  ru: "На этом курорте коттеджей не найдено ",
+  en: "No cottages found in this resort "
+}
