@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
 import { cottageUtils } from "../../utils/cottage.utils";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const { isLoading } = useQuery({
@@ -16,12 +17,15 @@ const Home = () => {
     queryFn: cottageUtils.getCottageTop,
     enabled: false,
   });
-  const location = useLocation(); 
+  const location = useLocation();
 
   if (isLoading) return <Loader />;
   return (
     <>
-      <Navbar/>
+      <Helmet>
+        <title>Dachi V Gorax</title>
+      </Helmet>
+      <Navbar />
       {location.pathname === "/home" || location.pathname === "/" ? (
         <>
           <Header />

@@ -37,6 +37,7 @@ export const cottageUtils = {
     const { data } = await custimAxios.get("cottage/user", {
       headers: {
         "accept-language": localStorage.getItem("language"),
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     });
     return data;
@@ -88,7 +89,11 @@ export const cottageUtils = {
       formData.append("price", price);
       formData.append("priceWeekend", priceWeekend);
       formData.append("description", description);
-      const { data } = await custimAxios.post("cottage/add", formData);
+      const { data } = await custimAxios.post("cottage/add", formData, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
       return data;
     } catch (error) {
       console.log(error);

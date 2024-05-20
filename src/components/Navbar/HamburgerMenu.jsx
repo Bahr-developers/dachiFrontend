@@ -24,7 +24,7 @@ const HamburgerMenu = ({ modalIsOpen, setModalIsOpen, logoutBtn }) => {
             <img src={Close} width="18.62" height="18.62" alt="close" />
           </button>
           <div className="modal-nav-menu">
-            <Link to="tel:+9981002314" className="modal-nav-contact d-black ">
+            <Link to="tel:+9981002314" className="modal-nav-contact d-block ">
               {NavLeng[languageChange].connection}
             </Link>
 
@@ -43,9 +43,7 @@ const HamburgerMenu = ({ modalIsOpen, setModalIsOpen, logoutBtn }) => {
             <button
               onClick={logoutBtn}
               className={
-                accessToken && refreshToken
-                  ? "modal-nav-out"
-                  : "modal-nav-out d-none"
+                accessToken && refreshToken ? "modal-nav-out" : "d-none"
               }
             >
               <img src={GoOut} alt="" />
