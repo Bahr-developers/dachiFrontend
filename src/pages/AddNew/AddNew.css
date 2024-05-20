@@ -104,16 +104,23 @@
   gap: 116px;
 }
 
+.checkboxComfort {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #3cd298;
+  cursor: pointer;
+  box-shadow: none;
+}
+.checkboxComfort:checked {
+  background-color: #3cd298;
+  box-shadow: none;
+}
+
 .addnew-inner-check {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.addnew-check {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
 }
 
 .addnew-objects {
@@ -122,7 +129,7 @@
   background: #2c2d2e;
   border-radius: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(2, 300px);
   row-gap: 16px;
   column-gap: 90px;
 }
