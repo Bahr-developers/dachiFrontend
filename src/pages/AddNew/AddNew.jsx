@@ -214,7 +214,7 @@ const AddNew = () => {
               <input
                 type="text"
                 name="cottagename"
-                className="add-new-title-main my-4"
+                className="add-new-title-main my-4 form-input"
                 placeholder={AddNewPageLanguage.name[languageChange]}
               />
               <div className="wrap-region-place">
@@ -277,7 +277,7 @@ const AddNew = () => {
                   cottageType.data.map((e) => (
                     <label key={e.id} className="addnew-inner-check">
                       <input
-                        className="addnew-check form-check-input"
+                        className="form-check-input checkboxComfort"
                         type="checkbox"
                         value={e.id}
                         name="cottagetype"
@@ -298,7 +298,7 @@ const AddNew = () => {
                 comforts.data.map((e) => (
                   <label key={e.id} className="addnew-object">
                     <input
-                      className="addnew-check"
+                      className="form-check-input checkboxComfort"
                       type="checkbox"
                       value={e.id}
                       onChange={handleCottageComforts}

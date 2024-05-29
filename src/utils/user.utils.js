@@ -6,7 +6,12 @@ export const userUtils = {
     return data;
   },
   getSingleUser: async () => {
-    const { data } = await custimAxios.get("/user/single");
+    if (!localStorage.getItem("accessToken")) return null;
+    const { data } = await custimAxios.get("/user/single", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
     localStorage.setItem("user", JSON.stringify(data));
     return data;
   },
@@ -27,7 +32,11 @@ export const userUtils = {
     favoriteCottages.forEach((cottage) =>
       formData.append("favoriteCottages", cottage)
     );
-    const { data } = await custimAxios.patch(`user/edit/${id}`, formData);
+    const { data } = await custimAxios.patch(`user/edit/${id}`, formData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
     return data;
   },
 };

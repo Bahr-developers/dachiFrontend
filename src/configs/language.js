@@ -261,7 +261,7 @@ export const exitLang = [
   },
   {
     uz: "Kirish",
-    ru: "Входить",
+    ru: "Вход",
     en: "Log in",
   },
 ];
@@ -528,5 +528,11 @@ export const ViewLanguage = {
 export const notPlace = {
   uz: "Bu dam olish maskanida dacha topilmadi ",
   ru: "На этом курорте коттеджей не найдено ",
-  en: "No cottages found in this resort "
-}
+  en: "No cottages found in this resort ",
+};
+
+export const notificationLanguage = {
+  uz: "Bildirishnomalar mavjud emas",
+  ru: "Нет уведомлений",
+  en: "There are no notifications",
+};

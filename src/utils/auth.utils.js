@@ -8,20 +8,21 @@ export const authUtils = {
       userId,
     });
 
-    localStorage.setItem("accessToken", data.accessToken);
-    localStorage.setItem("refreshToken", data.refreshToken);
+    localStorage.setItem("accessToken", data?.accessToken);
+    localStorage.setItem("refreshToken", data?.refreshToken);
     localStorage.setItem("user", JSON.stringify(data?.user));
 
     // rewrite axios token
     custimAxios.defaults.headers.common[
       "Authorization"
-    ] = `Bearer ${data.accessToken}`;
+    ] = `Bearer ${data?.accessToken}`;
 
     return data;
   },
 
   smsAuth: async ({ phone }) => {
     const { data } = await custimAxios.post("/auth/login/sms", { phone });
+
     return data;
   },
 
@@ -38,8 +39,8 @@ export const authUtils = {
       }
     );
 
-    localStorage.setItem("accessToken", data.accessToken);
-    localStorage.setItem("refreshToken", data.refreshToken);
+    localStorage.setItem("accessToken", data?.accessToken);
+    localStorage.setItem("refreshToken", data?.refreshToken);
 
     // rewrite axios token
     custimAxios.defaults.headers.common[
