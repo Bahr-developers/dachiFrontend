@@ -3,9 +3,9 @@ import { IoMdDoneAll } from "react-icons/io";
 import { notificationUtils } from "../../utils/notification.utilis";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
-const NotificationItam = ({ mes, userId }) => {
+const NotificationItam = ({ mes}) => {
+  const user = JSON.parse(localStorage.getItem("user")) || undefined;
   const time = mes?.createdAt.split("T");
-
   const querClient = useQueryClient();
 
   // edit Notification
@@ -21,11 +21,11 @@ const NotificationItam = ({ mes, userId }) => {
 
   // read by id
   const handleRead = (id) => {
-    editNotificationById.mutate({
-      watchedUserId: userId,
-      id: id,
-      status: "seen",
-    });
+      editNotificationById.mutate({
+        watchedUserId: user?.id,
+        id: id,
+        status: "seen",
+      });
   };
 
   return (
