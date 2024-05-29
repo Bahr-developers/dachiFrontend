@@ -5,6 +5,7 @@ export const TariffUtils = {
     const { data } = await custimAxios.get("/tariff", {
       headers: {
         "accept-language": localStorage.getItem("language"),
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     });
     return data;

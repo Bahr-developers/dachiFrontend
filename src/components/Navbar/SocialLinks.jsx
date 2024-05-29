@@ -13,10 +13,9 @@ const SocialLinks = () => {
       name="social"
       id="social"
       onChange={jumpLink}
+      defaultValue={NavLeng[languageChange].set}
     >
-      <option selected value="socials">
-        {NavLeng[languageChange].set}
-      </option>
+      <option value="socials">{NavLeng[languageChange].set}</option>
       <option value="https://t.me/dachi_v_gorax">Telegram</option>
       <option value="https://facebook.com">Facebook</option>
       <option value="https://instagram.com">Instagram</option>

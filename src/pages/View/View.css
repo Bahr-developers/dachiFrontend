@@ -101,13 +101,12 @@
 
 .view-facilitys {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
-  justify-content: space-between;
+  grid-template-columns: repeat(2, 500px);
   align-items: center;
+  gap: 20px;
 }
 
 .view-facility1 {
-  width: 250px;
   margin: 0 0 24px 0;
   padding: 0;
   display: flex;

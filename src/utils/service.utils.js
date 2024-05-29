@@ -5,6 +5,7 @@ export const ServiceUtils = {
     const { data } = await custimAxios.get("/services", {
       headers: {
         "accept-language": localStorage.getItem("language"),
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     });
     return data;
