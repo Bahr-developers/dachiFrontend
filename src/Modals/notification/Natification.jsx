@@ -10,10 +10,10 @@ import NotificationItam from "./notificationItam";
 
 function Natification() {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
-  const location = useLocation();
-  const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
+  const notification =  ALL_DATA.useNotificationUser(user?.id)?.data;
   const { languageChange } = useContext(LanguageContext);
   const notifications = notification?.filter((notif) => notif.status === "new");
+  const location = useLocation();
 
   return (
     <>
@@ -79,8 +79,8 @@ function Natification() {
             </div>
             <div className="modal-body">
               {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p> :
-                notification.map((mes) => (
-                  <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
+                notification?.length && notification.map((mes) => (
+                  <NotificationItam mes={mes} key={mes.id}/>
                 ))}
             </div>
           </div>
