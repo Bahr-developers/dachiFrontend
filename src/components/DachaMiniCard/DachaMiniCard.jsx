@@ -91,7 +91,7 @@ const DachaMiniCard = (props) => {
           }`}
         >
           <span>
-            <IoMdHeart size={18} />
+            <IoMdHeart size={15} />
           </span>
         </div>
       </div>

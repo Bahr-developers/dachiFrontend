@@ -63,24 +63,37 @@ function Natification() {
         id="staticBackdrop"
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
-      >
-              {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p> :
-                notification?.length && notification.map((mes) => (
-                  <NotificationItam mes={mes} key={mes.id}/>
-                ))}
-              {!notification?.length ? (
-                <p className="text-black noneFavoriteCart border-warning border">
-                  {notificationLanguage[languageChange]}
-                </p>
-              ) : (
-                notification.map((mes) => (
-                  <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
-                ))
-              )}
-            </div>
-          </div>
+      ><div className="modal-dialog modal-natif-dialog modal-dialog-scrollable">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="staticBackdropLabel">
+            {notificationLang[languageChange]}
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
+              <div className="modal-body">
+                  {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p>:
+                    notification?.length && notification.map((mes) => (
+                      <NotificationItam mes={mes} key={mes.id}/>
+                    ))}
+                  {!notification?.length ? (
+                    <p className="text-black noneFavoriteCart border-warning border">
+                      {notificationLanguage[languageChange]}
+                    </p>
+                  ) : (
+                    notification.map((mes) => (
+                      <NotificationItam mes={mes} key={mes.id} userId={user?.id} />
+                    ))
+                  )}
+              </div>
+              </div>
       </div>
+        </div>
     </>
   );
 }
