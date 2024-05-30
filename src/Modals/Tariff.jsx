@@ -35,6 +35,7 @@ const Tariff = (props) => {
       assignedBy: singleUser.id,
     });
     activete.current.classList.remove("disabled");
+    console.log(addCottage.variables);
   };
 
   const closeModalTarifOutline = (e) => {

@@ -75,7 +75,7 @@ export const FilterSectionLeng = {
 export const FilterLeng = {
   uz: {
     place: "Joylashuv",
-    tip: "Dacha type",
+    tip: "Dacha turi",
     price: "Narxi",
   },
   ru: {

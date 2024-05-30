@@ -190,4 +190,7 @@
     padding: 36px 0 37px;
     display: flex;
   }
+  .footer-text{
+    margin-bottom: 15px;
+  }
 }

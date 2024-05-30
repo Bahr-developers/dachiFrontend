@@ -100,7 +100,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://telegram.org/dachi_v_gorax"
+              href="https://t.me/dachi_v_gorax"
               target="_blank"
               className="footer-social"
             >

@@ -1,16 +1,21 @@
 .services-wrap {
   margin-top: 30px;
   display: flex;
+  /* align-items: center; */
   flex-wrap: wrap;
   gap: 20px;
 }
 .services-card {
   width: 350px;
   border-radius: 5px;
+  margin: 0 auto;
   overflow: hidden;
-  -webkit-box-shadow: inset 1px -2px 16px 4px rgba(170, 194, 194, 0.69);
-  -moz-box-shadow: inset 1px -2px 16px 4px rgba(170, 194, 194, 0.69);
-  box-shadow: inset 1px -2px 16px 4px rgba(170, 194, 194, 0.69);
+  position: relative;
+  /* border: 1px solid silver; */
+  /* padding: 10px; */
+  -webkit-box-shadow: 0px 0px 4px 3px rgba(212,212,212,1);
+-moz-box-shadow: 0px 0px 4px 3px rgba(212,212,212,1);
+box-shadow: 0px 0px 4px 3px rgba(212,212,212,1);
 }
 .services-caer-img {
   width: 350px;
@@ -18,25 +23,32 @@
   background: #00abf2;
 }
 .services-card-name {
+  margin-top: -20px;
   padding: 15px 15px 0;
 }
 .services-card-description {
   padding: 0 15px;
+  margin-bottom: 70px;
 }
 .services-card-link {
-  display: inline-block;
+  display: block;
   text-decoration: none;
-  color: black;
+  border: 1px solid #3cd298;
+  background-color: #3cd298;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
-  border: 1px solid black;
-  border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
+  position: absolute;
+  bottom: 10px;
   text-align: center;
+  width: 80%;
+  left: 40px;
 }
 .services-card-link:hover {
-  background-color: #3cd298;
+  background-color: #3a3a3a;
   color: white;
-  border: 1px solid #3cd298;
+  border: 1px solid #3a3a3a;
   transition: all 0.2s ease-in-out;
 }

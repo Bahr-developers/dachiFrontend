@@ -1,11 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { IoMdDoneAll } from "react-icons/io";
 import { notificationUtils } from "../../utils/notification.utilis";
+import { TbUserCheck } from "react-icons/tb";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
-const NotificationItam = ({ mes, userId }) => {
+const NotificationItam = ({ mes}) => {
+  const user = JSON.parse(localStorage.getItem("user")) || undefined;
   const time = mes?.createdAt.split("T");
-
   const querClient = useQueryClient();
 
   // edit Notification
@@ -21,11 +22,11 @@ const NotificationItam = ({ mes, userId }) => {
 
   // read by id
   const handleRead = (id) => {
-    editNotificationById.mutate({
-      watchedUserId: userId,
-      id: id,
-      status: "seen",
-    });
+      editNotificationById.mutate({
+        watchedUserId: user?.id,
+        id: id,
+        status: "seen",
+      });
   };
 
   return (
@@ -54,8 +55,8 @@ const NotificationItam = ({ mes, userId }) => {
               <IoMdDoneAll size={23} />
             </span>
             {mes.type === "personal" ? (
-              <span className="pesonal-notif btn text-white d-block btn-sm btn-success">
-                {mes.type}
+              <span className="text-black d-block">
+                <TbUserCheck size={20}/>
               </span>
             ) : (
               ""
