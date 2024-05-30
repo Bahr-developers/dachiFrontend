@@ -15,9 +15,10 @@ const ServiceItem = ({ el }) => {
         alt={el.name}
         className="services-caer-img"
       />
+      <hr />
       <h4 className="services-card-name">{el.name}</h4>
       <p className="services-card-description">{el.description}</p>
-      <div className="text-center mb-4">
+      <div className="servise-btn">
         <Link className="services-card-link" to="/tarif">
           {ServicesPageLanguage.viewTariff[languageChange]}
         </Link>
