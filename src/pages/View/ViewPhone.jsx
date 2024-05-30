@@ -15,9 +15,9 @@ const ViewPhone = ({ cottageView }) => {
       <div className="contactUSer">
         <p>{ViewPageLanguage.contactUser[languageChange]}</p>
         <div className="contact__user">
-          {cottageView?.user.image ? (
+          {cottageView?.user?.image ? (
             <LazyLoadImage
-              src={`${IMG_BASE_URL}${cottageView?.user.image}`}
+              src={`${IMG_BASE_URL}${cottageView?.user?.image}`}
               title="userImg"
               height={40}
               width={40}
@@ -28,10 +28,10 @@ const ViewPhone = ({ cottageView }) => {
               <FaRegUserCircle size={23} />
             </span>
           )}
-          <p>{cottageView?.user.name || "Username"}</p>
+          <p>{cottageView?.user?.name || "Username"}</p>
         </div>
         <Link
-          to={`/home/view/cottage/${cottageView?.user.id}`}
+          to={`/home/view/cottage/${cottageView?.user?.id}`}
           className="announCementLink"
         >
           <span>{ViewPageLanguage.announcement[languageChange]}</span>
@@ -42,7 +42,7 @@ const ViewPhone = ({ cottageView }) => {
         </Link>
       </div>
       <Link
-        to={`tel:+998${cottageView?.user.phone}`}
+        to={`tel:+998${cottageView?.user?.phone}`}
         className="btn btn-outline-success callLink p-0 call-me mt-3 text-center"
       >
         <FiPhoneCall size={23} />{" "}

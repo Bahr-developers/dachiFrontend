@@ -23,6 +23,8 @@ const View = () => {
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === id);
 
+  console.log(cottageView);
+
   const childImage = [];
 
   cottageView?.images?.forEach((e) => {
@@ -39,8 +41,8 @@ const View = () => {
   return (
     <>
       <Helmet>
-        <title>Cottage</title>
-        <meta name="description" content="single cottage page" />
+        <title>{cottageView?.name}</title>
+        <meta name="description" content={`${cottageView?.name}`} />
         <link rel="canonical" href="/view" />
       </Helmet>
 
@@ -51,7 +53,7 @@ const View = () => {
             <VIewSwiper cottageView={cottageView} />
             <ViewPhone cottageView={cottageView} />
             <div className="view-main">
-              <h2 className="view-name">{cottageView?.name}</h2>
+              <h1 className="view-name">{cottageView?.name}</h1>
               <p className="view-location">
                 {cottageView?.region?.name} {ViewLanguage[languageChange]},{" "}
                 {cottageView?.place?.name}
