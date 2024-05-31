@@ -7,6 +7,7 @@ import { LanguageContext } from "../../helper/languageContext";
 
 const ServiceItem = ({ el }) => {
   const { languageChange } = useContext(LanguageContext);
+  console.log(el, "item");
   return (
     <div key={el.id} className="services-card">
       <LazyLoadImage
@@ -19,7 +20,7 @@ const ServiceItem = ({ el }) => {
       <h4 className="services-card-name">{el.name}</h4>
       <p className="services-card-description">{el.description}</p>
       <div className="servise-btn">
-        <Link className="services-card-link" to="/tarif">
+        <Link className="services-card-link" to={`${el.id}`}>
           {ServicesPageLanguage.viewTariff[languageChange]}
         </Link>
       </div>
