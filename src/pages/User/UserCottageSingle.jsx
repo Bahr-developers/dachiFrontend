@@ -15,7 +15,7 @@ const UserCottageSingle = () => {
   const cottage = ALL_DATA.useCottageAllUserId(params.id);
 
   const user = ALL_DATA.useCottageUserById(params.id);
-  const {languageChange} = useContext(LanguageContext)
+  const { languageChange } = useContext(LanguageContext);
 
   if (user.isLoading) {
     return <Loader />;
@@ -35,7 +35,10 @@ const UserCottageSingle = () => {
             <p>+998{user.data?.phone}</p>
           </div>
         </div>
-        <h2 className="dacha-top mt-4 fs-2">{user?.data?.name}{userCottageSingle[languageChange]}</h2>
+        <h2 className="dacha-top mt-4 fs-2">
+          {user?.data?.name}
+          {userCottageSingle[languageChange]}
+        </h2>
         <div className="dacha-cards">
           {cottage.data?.length &&
             cottage.data

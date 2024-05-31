@@ -24,14 +24,16 @@ function Vacation() {
   return (
     <>
       <Helmet>
-        <title>Vacation</title>
-        <meta name="description" content="cottage places" />
+        <title>{placeName}</title>
+        <meta name="description" content={`${placeName} cottages`} />
+        <meta name="keywords" content={`${placeName} cottages`} />
         <link rel="canonical" href="/vacation" />
       </Helmet>
+
       <div className="container">
         <BreacdCrumbs />
         <div className="favorite">
-          <h2 className="favorite-header">{placeName}</h2>
+          <h1 className="favorite-header">{placeName}</h1>
           {cottages?.data?.length ? (
             <>
               <div className="place-card-sort-big">

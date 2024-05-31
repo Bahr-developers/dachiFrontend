@@ -22,8 +22,8 @@ const Tarif = () => {
     <>
       <Helmet>
         <title>Tariff</title>
-        <meta name="description" content="Tariff page" />
-        <link rel="canonical" href="/Tariff" />
+        <meta name="description" content="dachi v gorax Tariff page" />
+        <link rel="canonical" href="https://dachivgorax.uz/tarif" />
       </Helmet>
 
       <div className="container">

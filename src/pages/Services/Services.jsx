@@ -19,8 +19,11 @@ const Services = () => {
     <>
       <Helmet>
         <title>Services</title>
-        <meta name="description" content="Services page" />
-        <link rel="canonical" href="/services" />
+        <meta name="description" content="dachi v gorax Services page" />
+        <link
+          rel="canonical"
+          href="https://dachivgorax.uz/home/profile/services"
+        />
       </Helmet>
 
       <div className="container">

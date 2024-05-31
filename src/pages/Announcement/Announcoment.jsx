@@ -19,7 +19,10 @@ function Announcoment() {
       <Helmet>
         <title>Announcoment</title>
         <meta name="description" content="Announcoment page" />
-        <link rel="canonical" href="/announcoment" />
+        <link
+          rel="canonical"
+          href="https://dachivgorax.uz/home/profile/announcement"
+        />
       </Helmet>
 
       <div className="announcoment">
