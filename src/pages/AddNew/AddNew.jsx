@@ -156,9 +156,9 @@ const AddNew = () => {
   return (
     <>
       <Helmet>
-        <title>Announcoment</title>
-        <meta name="description" content="addnew page" />
-        <link rel="canonical" href="/addnew" />
+        <title>Add Cottage</title>
+        <meta name="description" content="Add cottage page" />
+        <link rel="canonical" href="https://dachivgorax.uz/home/add-new" />
       </Helmet>
 
       <div className="container">

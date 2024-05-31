@@ -26,7 +26,7 @@ const Favorite = () => {
       <Helmet>
         <title>Favorite</title>
         <meta name="description" content="Favorite page" />
-        <link rel="canonical" href="/favorite" />
+        <link rel="canonical" href="https://dachivgorax.uz/home/favorite" />
       </Helmet>
 
       <div className="container">

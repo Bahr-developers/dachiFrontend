@@ -95,7 +95,7 @@ const SignIn = () => {
       <Helmet>
         <title>Sign In</title>
         <meta name="description" content="Sign In page" />
-        <link rel="canonical" href="/signin" />
+        <link rel="canonical" href="https://dachivgorax.uz/sign-in" />
       </Helmet>
 
       <div className="signin">
