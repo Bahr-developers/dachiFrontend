@@ -46,25 +46,27 @@ const View = () => {
         <link rel="canonical" href="/view" />
       </Helmet>
 
-      <div className="viewWrapper">
+      <div className="viewWrapper mb-2">
         <div className="container">
           <BreacdCrumbs />
           <div className="view">
+            <h1 className="view-name">{cottageView?.name}</h1>              
             <VIewSwiper cottageView={cottageView} />
             <ViewPhone cottageView={cottageView} />
             <div className="view-main">
               <h1 className="view-name">{cottageView?.name}</h1>
+
               <p className="view-location">
-                {cottageView?.region?.name} {ViewLanguage[languageChange]},{" "}
-                {cottageView?.place?.name}
+                {cottageView?.region?.name} {ViewLanguage[languageChange]}, {cottageView?.place?.name}
               </p>
-              <ViewStars cottageView={cottageView} />
+              
+              <ViewStars cottageView={cottageView} />                           
               <h3 className="view-h">
                 {ViewPageLanguage.aboutCottage[languageChange]}
               </h3>
               <pre className="view-p">{cottageView?.description}</pre>
             </div>
-            <div>
+            <div className="mb-5">
               <p className="view-facility-header">
                 {ViewPageLanguage.allComfort[languageChange]}
               </p>

@@ -43,7 +43,7 @@
   margin: 0;
   padding: 0;
   font-weight: 500;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 58px;
   color: #2c2d2e;
 }
@@ -103,11 +103,12 @@
   display: grid;
   grid-template-columns: repeat(2, 500px);
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  column-gap: 20px;
 }
 
 .view-facility1 {
-  margin: 0 0 24px 0;
+  margin: 0 0 5px 0;
   padding: 0;
   display: flex;
   align-items: center;
@@ -338,6 +339,13 @@
     display: grid;
     grid-template-columns: repeat(2, 150px);
   }
+  .view-facility1{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+
+  }
   .view-facility-header {
     margin: 0 0 16px 0;
     padding: 0;
@@ -349,6 +357,8 @@
 
   .view-facility-text {
     width: 150px;
+    height: 30px;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     font-weight: 500;
