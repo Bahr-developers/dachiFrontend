@@ -81,9 +81,6 @@ function App() {
               <Route path="home/vacation" element={<VacationPage />} />
             </Route>
             <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/pay" element={<Pay />} />
-            <Route path="/to-pay" element={<ToPay />} />
-            <Route path="/pay-detail" element={<PayDetail />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>
