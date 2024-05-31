@@ -12,7 +12,6 @@ import ServiceItem from "./ServiceItem";
 const Services = () => {
   const services = ALL_DATA.useServices();
   const { languageChange } = useContext(LanguageContext);
-  console.log(services?.data);
 
   if (services.isLoading) return <Loader />;
 

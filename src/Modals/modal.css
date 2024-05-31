@@ -56,7 +56,7 @@
 .close-btn-modal {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: -5px;
 }
 .tarif-info {
   width: 80%;
@@ -148,6 +148,11 @@
   }
   .tarif-day {
     margin-left: 35px !important;
+  }
+  .close-btn-modal {
+    position: absolute;
+    top: -3px;
+    right: -13px;
   }
 }
 

@@ -7,7 +7,6 @@ import { LanguageContext } from "../../helper/languageContext";
 
 const ServiceItem = ({ el }) => {
   const { languageChange } = useContext(LanguageContext);
-  console.log(el, "item");
   return (
     <div key={el.id} className="services-card">
       <LazyLoadImage
