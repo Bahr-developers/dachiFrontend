@@ -14,7 +14,7 @@ const ViewComforts = ({ cottageView }) => {
               width={30}
               height={30}
             />
-            <p className="view-facility-text">{e.name}</p>
+            <p title={e.name} className="view-facility-text">{e.name}</p>
           </div>
         ))}
     </div>
