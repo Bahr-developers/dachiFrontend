@@ -6,15 +6,11 @@ import { useQueryClient } from "@tanstack/react-query";
 import Loader from "./components/Loader/Loader";
 
 const Home = lazy(() => import("./pages/Home/Home"));
-const Contact = lazy(() => import("./pages/Contact/Contact"));
 const SignIn = lazy(() => import("./pages/SignIn/SignIn"));
 const View = lazy(() => import("./pages/View/View"));
 const Filter = lazy(() => import("./pages/Filter/Filter"));
 const User = lazy(() => import("./pages/User/User"));
 const Tarif = lazy(() => import("./pages/Tarif/Tarif"));
-const Pay = lazy(() => import("./pages/Pay/Pay"));
-const ToPay = lazy(() => import("./pages/ToPay/ToPay"));
-const PayDetail = lazy(() => import("./pages/PayDetail/PayDetail"));
 const Favorite = lazy(() => import("./pages/Favorite/Favorite"));
 const Add = lazy(() => import("./pages/Add/Add"));
 const AddNew = lazy(() => import("./pages/AddNew/AddNew"));
@@ -63,7 +59,6 @@ function App() {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Home />}>
-              <Route path="home/contact" element={<Contact />} />
               <Route path="home/favorite" element={<Favorite />} />
               <Route path="home/profile/user" element={<User />} />
               <Route path="home/filter" element={<Filter />} />
@@ -86,10 +81,6 @@ function App() {
             </Route>
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/tarif" element={<Tarif />} />
-            <Route path="/pay" element={<Pay />} />
-            <Route path="/to-pay" element={<ToPay />} />
-            <Route path="/pay-detail" element={<PayDetail />} />
-
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>

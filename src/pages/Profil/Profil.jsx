@@ -15,7 +15,7 @@ const Profil = () => {
       <Helmet>
         <title>User Profil</title>
         <meta name="description" content="profil page" />
-        <link rel="canonical" href="/profil" />
+        <link rel="canonical" href="https://dachivgorax.uz/home/profile/user" />
       </Helmet>
 
       <div className="container">

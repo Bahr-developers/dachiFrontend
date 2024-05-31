@@ -83,37 +83,37 @@ const Footer = () => {
         <div className="footer-bottom">
           <p className="footer-address">{FooterMiniLang[languageChange]}</p>
           <div className="footer-socials">
-            <a
-              href="https://www.instagram.com/dachi_uz/"
+            <Link
+              to="https://www.instagram.com/dachi_uz/"
               target="_blank"
               className="footer-social"
             >
               <img src={Instagram} width="36" height="36" alt="instagram" />
-            </a>
+            </Link>
 
-            <a
-              href="https://www.facebook.com/dachagori/"
+            <Link
+              to="https://www.facebook.com/dachagori/"
               target="_blank"
               className="footer-social"
             >
               <img src={Facebook} width="36" height="36" alt="facebook" />
-            </a>
+            </Link>
 
-            <a
-              href="https://t.me/dachi_v_gorax"
+            <Link
+              to="https://t.me/dachi_v_gorax"
               target="_blank"
               className="footer-social"
             >
               <img src={Telegram} width="36" height="36" alt="telegram" />
-            </a>
+            </Link>
 
-            <a
-              href="https://www.youtube.com/@dachi_uz"
+            <Link
+              to="https://www.youtube.com/@dachi_uz"
               target="_blank"
               className="footer-social"
             >
               <img src={Youtube} width="36" height="36" alt="youtube" />
-            </a>
+            </Link>
           </div>
           <p className="footer-text">©2024 Дача в горах. All Rights Reserved</p>
         </div>

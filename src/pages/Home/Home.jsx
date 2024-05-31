@@ -24,7 +24,10 @@ const Home = () => {
     <>
       <Helmet>
         <title>Dachi V Gorax</title>
+        <meta name="description" content="dachi v gorax home page" />
+        <link rel="canonical" href="https://dachivgorax.uz" />
       </Helmet>
+
       <Navbar />
       {location.pathname === "/home" || location.pathname === "/" ? (
         <>

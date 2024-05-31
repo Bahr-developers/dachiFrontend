@@ -82,8 +82,8 @@ const User = () => {
     <>
       <Helmet>
         <title>User Profil</title>
-        <meta name="description" content="user page" />
-        <link rel="canonical" href="/user" />
+        <meta name="description" content="dachi v gorax user page" />
+        <link rel="canonical" href="https://dachivgorax.uz/home/profile/user" />
       </Helmet>
 
       <div>

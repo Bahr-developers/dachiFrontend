@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <Helmet>
         <title>Error Page</title>
         <meta name="description" content="Error page" />
-        <link rel="canonical" href="/error" />
+        <link rel="canonical" href="https://dachivgorax.uz/error" />
       </Helmet>
 
       <section className="PageNotFound">
