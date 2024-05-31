@@ -65,6 +65,11 @@ export const RecamudetLeng = {
   ru: "Рекомендуемые",
   en: "Recommended",
 };
+export const showMoreInfo = {
+  uz: "Ko'proq ko'rish",
+  ru: "Показать больше",
+  en: "Show more",
+}
 // ============================== Filter language
 export const FilterSectionLeng = {
   uz: "Filter bo'limi",

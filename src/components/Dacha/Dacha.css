@@ -19,6 +19,19 @@
   gap: 10px;
 }
 
+.show-more{
+  display: block;
+  width: 190px;
+  background-color: rgb(218, 211, 211);
+  color: #333232;
+  border: 0;
+  padding: 7px;
+  border-radius: 8px;
+  margin: -70px auto 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
 @media (max-width: 576px) {
   .dacha {
     display: block;
@@ -39,6 +52,18 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+  }
+  .show-more{
+    display: block;
+    width: 190px;
+    background-color: rgb(218, 211, 211);
+    color: #333232;
+    border: 0;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 30px auto 0;
+    font-size: 20px;
+    font-weight: 500;
   }
 }
 

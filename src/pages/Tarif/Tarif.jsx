@@ -4,8 +4,6 @@ import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 
 import { Helmet } from "react-helmet-async";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
 import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
@@ -15,6 +13,7 @@ import TarifItem from "./TarifItem";
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
+  // const params = useParams()
   const { languageChange } = useContext(LanguageContext);
 
   if (tariff.isLoading) return <Loader />;
@@ -28,7 +27,6 @@ const Tarif = () => {
       </Helmet>
 
       <div className="container">
-        <Navbar />
         <div className="tarif">
           <h2 className="tarif-header font-bold">
             {TariffPageLanguage.mainTitle[languageChange]}
@@ -48,7 +46,6 @@ const Tarif = () => {
         </div>
       </div>
       <MiniNaw />
-      <Footer />
     </>
   );
 };
