@@ -11,20 +11,20 @@
 /* breadcrumbs */
 
 .crumb {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .breadcrumbs > * {
   display: inline-block;
   margin-right: 10px;
 }
 .breadcrumbs .crumb:after {
-  content: ">";
+  content: "/";
   margin-left: 10px;
 }
 .breadcrumbs .crumb:last-child:after {
   display: none;
 }
 .breadcrumbs .crumb a {
-  color: #6e6b6b;
+  /* color: #6e6b6b; */
   text-decoration: none;
 }
