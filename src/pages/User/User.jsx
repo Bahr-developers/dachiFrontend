@@ -98,6 +98,7 @@ const User = () => {
                   <input
                     onChange={handleIsMianImage}
                     type="file"
+                    accept="image/*"
                     name="userImage"
                     className="file-input__input curson-pointer"
                   />

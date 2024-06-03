@@ -421,6 +421,11 @@ export const ProfilePageLanguage = {
     ru: "номер",
     en: "Number",
   },
+  order: {
+    uz: "Foydalangan tariflarim",
+    ru: "Мои использованные тарифы",
+    en: "My rates used",
+  }
 };
 
 export const ServicesPageLanguage = {

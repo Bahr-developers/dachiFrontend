@@ -16,7 +16,7 @@ const Tariff = (props) => {
   const queryClient = useQueryClient();
 
   const addCottage = useMutation({
-    mutationFn: TariffUtils.addTariffActive,
+    mutationFn: TariffUtils.activeTariff,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.tariff] });
       toastify.successMessage(TariffModalLanguage[languageChange]);

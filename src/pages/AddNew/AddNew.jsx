@@ -173,6 +173,7 @@ const AddNew = () => {
                 <label className="addnew-img-bg label-input-file">
                   <input
                     type="file"
+                    accept="image/*"
                     name="mainImage"
                     className="input-file"
                     onChange={handleMainImage}
@@ -194,6 +195,7 @@ const AddNew = () => {
                     type="file"
                     name="childimg"
                     multiple
+                    accept="image/*"
                     className="input-file"
                     onChange={handlmultipleImg}
                   />

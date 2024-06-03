@@ -10,10 +10,12 @@ import { LanguageContext } from "../../helper/languageContext";
 import { TariffPageLanguage } from "../../configs/language";
 
 import TarifItem from "./TarifItem";
+import { useParams } from "react-router-dom";
 
 const Tarif = () => {
-  const tariff = ALL_DATA.useTariff();
-  // const params = useParams()
+  const params = useParams()
+  const tariff = ALL_DATA.useTarifId(params?.id);
+  console.log(tariff.data?.serviceCode);
   const { languageChange } = useContext(LanguageContext);
 
   if (tariff.isLoading) return <Loader />;
@@ -33,13 +35,14 @@ const Tarif = () => {
           </h2>
 
           <div className="tarif-cards wrap-tarif-cards">
-            {tariff.data?.length &&
-              tariff.data.map((el, i) => (
+            {tariff.data?.tariffs?.length &&
+              tariff.data?.tariffs.map((el, i) => (
                 <TarifItem
+                  serviceCode={tariff.data?.serviceCode}
                   el={el}
                   key={el.id}
                   i={i}
-                  tariffLength={tariff.data.length}
+                  tariffLength={tariff.data?.tariffs?.length}
                 />
               ))}
           </div>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ProfilePageLanguage } from "../../configs/language";
 import { useContext } from "react";
+import { MdOutlineBookmarkBorder } from "react-icons/md"
 import { LanguageContext } from "../../helper/languageContext";
 
 const Profil = () => {
@@ -34,7 +35,7 @@ const Profil = () => {
               {ProfilePageLanguage.services[languageChange]}
             </p>
             <i className="bx fs-1  bx-server"></i>
-          </Link>
+          </Link>          
           <Link
             to="/home/profile/announcement"
             className="profil-card annoumcommet-card-mini"
@@ -43,6 +44,15 @@ const Profil = () => {
               {ProfilePageLanguage.myCottage[languageChange]}
             </p>
             <i className="bx fs-1  bx-analyse"></i>
+          </Link>
+          <Link
+            to="/home/profile/order"
+            className="profil-card order-card-mini"
+          >
+            <p className="profil-text">
+              {ProfilePageLanguage.order[languageChange]}
+            </p>
+            <MdOutlineBookmarkBorder size={25}/>
           </Link>
         </div>
       </div>

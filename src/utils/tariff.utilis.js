@@ -10,4 +10,17 @@ export const TariffUtils = {
     });
     return data;
   },
+  activeTariff: async ({tariffId, cottageId, assignedBy}) => {
+    const { data } = await custimAxios.post("tariff/activate", {
+      assignedBy,
+      tariffId,
+      cottageId
+    }, {
+      headers: {
+        "accept-language": localStorage.getItem("language"),
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
+    return data;
+  },
 };
