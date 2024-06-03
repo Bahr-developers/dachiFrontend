@@ -103,11 +103,7 @@ const User = () => {
                   />
                   <img
                     ref={editImage}
-                    className={
-                      edit
-                        ? "add-user-image-icons d-none"
-                        : "add-user-image-icons"
-                    }
+                    className={edit ? "d-none" : "add-user-image-icons"}
                     src={AddImg}
                     alt="img"
                   />
