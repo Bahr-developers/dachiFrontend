@@ -12,7 +12,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import SwiperSlideItem from "./SwiperSlideItem";
 
 const HeaderSwiper = () => {
-  const cottageTop = ALL_DATA.useCottage()?.data;
+  const cottageTop = ALL_DATA.useCottageTop()?.data;
 
   return (
     <Swiper
@@ -28,15 +28,13 @@ const HeaderSwiper = () => {
       }}
     >
       {cottageTop?.length &&
-        cottageTop
-          .filter((topCott) => topCott.isTop === true)
-          .map((el) => {
-            return (
-              <SwiperSlide key={el.id} className="swiper-slide-header">
-                <SwiperSlideItem el={el} />
-              </SwiperSlide>
-            );
-          })}
+        cottageTop.map((el) => {
+          return (
+            <SwiperSlide key={el.id} className="swiper-slide-header">
+              <SwiperSlideItem el={el} />
+            </SwiperSlide>
+          );
+        })}
     </Swiper>
   );
 };
