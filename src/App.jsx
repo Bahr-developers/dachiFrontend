@@ -6,6 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import Loader from "./components/Loader/Loader";
 
 const Home = lazy(() => import("./pages/Home/Home"));
+const Order = lazy(()=> import('./pages/Order/Order'))
 const SignIn = lazy(() => import("./pages/SignIn/SignIn"));
 const View = lazy(() => import("./pages/View/View"));
 const Filter = lazy(() => import("./pages/Filter/Filter"));
@@ -65,6 +66,7 @@ function App() {
               <Route path="home/profile" element={<Profil />} />
               <Route path="home/profile/add" element={<Add />} />
               <Route path="home/profile/services" element={<Services />} />
+              <Route path="home/profile/order" element={<Order/>} />
               <Route path="home/profile/services/:id" element={<Tarif />} />
               <Route path="home/add-new" element={<AddNew />} />
               <Route

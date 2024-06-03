@@ -3,13 +3,14 @@ import { TariffPageLanguage } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 import Tariff from "../../Modals/Tariff";
 
-const TarifItem = ({ el, i, tariffLength }) => {
+const TarifItem = ({ el, i, tariffLength, serviceCode }) => {
   const { languageChange } = useContext(LanguageContext);
+  console.log(el);
   return (
     <React.Fragment key={el.id}>
       <div className="tarif-cards">
         <div className={i >= 3 ? "tarif-card mt-4" : "tarif-card"}>
-          <p className="tarif-name">{el.service.serviceCode}</p>
+          <p className="tarif-name">{serviceCode}</p>
           <div className="tarif-date1">
             {el.days} <br /> {TariffPageLanguage.day[languageChange]}
           </div>
@@ -19,7 +20,7 @@ const TarifItem = ({ el, i, tariffLength }) => {
         <div
           className={
             tariffLength === i + 1 || i === 2
-              ? "tarif-line d-none"
+              ? "d-none"
               : "tarif-line"
           }
         ></div>

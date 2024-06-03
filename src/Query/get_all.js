@@ -178,7 +178,7 @@ export const ALL_DATA = {
   useCottageUserById: (userID) =>
     useQuery({
       queryKey: [QUERY_KEYS.userCottageUser],
-      queryFn: async () => userUtils.getCottageUserById(userID),
+      queryFn: async () => await userUtils.getCottageUserById(userID),
     }),
 
   useNotificationUser: (userId) =>
@@ -216,4 +216,10 @@ export const ALL_DATA = {
         return data;
       },
     }),
+  useTarifId: (tarifId) => 
+    useQuery({
+      queryKey: [QUERY_KEYS.servicesId, tarifId],
+      queryFn: async () =>  await ServiceUtils.getServiceId(tarifId)
+    })
+  
 };
