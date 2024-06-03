@@ -37,6 +37,12 @@ export const ALL_DATA = {
     }
     return { ...cottages };
   },
+  useCottageTop: () => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.cottageTop],
+      queryFn: cottageUtils.getCottageTop,
+    });
+  },
   useCottageByPlace: (placeId) => {
     const cottages = useQuery({
       queryKey: [QUERY_KEYS.cottages_by_place],
