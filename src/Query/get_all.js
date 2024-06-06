@@ -10,6 +10,7 @@ import { userUtils } from "../utils/user.utils";
 import { notificationUtils } from "../utils/notification.utilis";
 import { ServiceUtils } from "../utils/service.utils";
 import { TariffUtils } from "../utils/tariff.utilis";
+import { OrderUtils } from "../utils/order.utils";
 
 export const ALL_DATA = {
   useCottage: () => {
@@ -226,6 +227,10 @@ export const ALL_DATA = {
     useQuery({
       queryKey: [QUERY_KEYS.servicesId, tarifId],
       queryFn: async () =>  await ServiceUtils.getServiceId(tarifId)
+    }),
+  useOrder: () => 
+    useQuery({
+      queryKey: [QUERY_KEYS.order],
+      queryFn:  OrderUtils.getOrder 
     })
-  
 };

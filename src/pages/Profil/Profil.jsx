@@ -7,9 +7,12 @@ import { ProfilePageLanguage } from "../../configs/language";
 import { useContext } from "react";
 import { MdOutlineBookmarkBorder } from "react-icons/md"
 import { LanguageContext } from "../../helper/languageContext";
+import { ALL_DATA } from "../../Query/get_all";
 
 const Profil = () => {
   const { languageChange } = useContext(LanguageContext);
+
+  const order = ALL_DATA.useOrder()
 
   return (
     <>
@@ -47,7 +50,7 @@ const Profil = () => {
           </Link>
           <Link
             to="/home/profile/order"
-            className="profil-card order-card-mini"
+            className={order?.data?.length ? "profil-card order-card-mini": "d-none"}
           >
             <p className="profil-text">
               {ProfilePageLanguage.order[languageChange]}

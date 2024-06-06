@@ -15,7 +15,6 @@ import { useParams } from "react-router-dom";
 const Tarif = () => {
   const params = useParams()
   const tariff = ALL_DATA.useTarifId(params?.id);
-  console.log(tariff.data?.serviceCode);
   const { languageChange } = useContext(LanguageContext);
 
   if (tariff.isLoading) return <Loader />;

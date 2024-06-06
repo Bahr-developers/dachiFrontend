@@ -5,7 +5,6 @@ import Tariff from "../../Modals/Tariff";
 
 const TarifItem = ({ el, i, tariffLength, serviceCode }) => {
   const { languageChange } = useContext(LanguageContext);
-  console.log(el);
   return (
     <React.Fragment key={el.id}>
       <div className="tarif-cards">

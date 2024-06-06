@@ -1,8 +1,8 @@
 
 const Order = () => {
     return (
-        <div>
-            Order
+        <div className="container">
+            order
         </div>
     );
 };
