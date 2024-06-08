@@ -1,0 +1,89 @@
+.order-card {
+    border: 1px solid silver;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.order-card-body {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 280px);
+    padding: 0 8px;
+    overflow: hidden;
+}
+
+.tariff-name {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order-cart-cattage-head {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+}
+
+.order-cart-cattage-name {
+    font-size: 17px;
+    padding: 2px 0;
+    margin-top: 7px;
+}
+
+.order-status {
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.order-card-body-mini{
+    display: none;
+}
+
+@media (max-width: 414px) {
+    .order-card {
+        border: 1px solid silver;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+
+    .order-card-body {
+       display: none;
+    }
+    .order-card-body-mini{
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .tariff-name {
+        font-size: 22px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .order-cart-cattage-head {
+        font-size: 18px;
+        font-weight: 500;
+        border-bottom: none;
+        margin-top: 10px;
+    }
+
+    .order-cart-cattage-name {
+        font-size: 17px;
+        padding: 2px 0;
+        margin-top: 7px;
+    }
+
+    .order-status {
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        width: 120px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+}
