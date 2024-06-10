@@ -139,7 +139,16 @@ export const ALL_DATA = {
     }
     return { ...userCottage };
   },
-
+  useCottageTariffTop: (id) => 
+  useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_isTop, id],
+      queryFn: async () => await cottageUtils.getCottageTariffTop(id)
+  }),
+  useCottageRecommended: () => 
+    useQuery({
+      queryKey: [QUERY_KEYS.cottage_by_recommended],
+      queryFn: cottageUtils.getCottageRecommended
+    }),
   useLanguage: () =>
     useQuery({
       queryKey: [QUERY_KEYS.languages],
