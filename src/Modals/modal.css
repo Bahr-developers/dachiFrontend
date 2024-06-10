@@ -97,6 +97,16 @@
 .notificationsBtn {
   position: relative;
 }
+
+.order-status {
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  width: 120px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 @media (max-width: 576px) {
   .notifLength {
     width: 18px;
@@ -154,9 +164,17 @@
     top: -3px;
     right: -13px;
   }
+  .order-status {
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    text-transform: capitalize;
+}
 }
 
-@media (max-width: 395px) {
+@media only screen and (max-width: 414px) {
   .tariff-modal-wrap {
     position: fixed;
     top: 90px;
@@ -201,5 +219,8 @@
 
   .minibell-img {
     display: block;
+  }
+  .cancelled-modal-wrap{
+    width: 250px;
   }
 }

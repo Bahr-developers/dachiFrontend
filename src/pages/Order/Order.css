@@ -4,14 +4,6 @@
     border-radius: 8px;
 }
 
-.order-card-body {
-    display: grid;
-    list-style: none;
-    grid-template-columns: repeat(4, 280px);
-    padding: 0 8px;
-    overflow: hidden;
-}
-
 .tariff-name {
     font-size: 22px;
     font-weight: 600;
@@ -19,31 +11,27 @@
 }
 
 .order-cart-cattage-head {
-    font-size: 18px;
-    font-weight: 500;
-    border-bottom: 1px solid silver;
-    margin-top: 10px;
+    width: 160px;
+    overflow: hidden;
+    font-size: 17px;
+    padding: 2px 0;
+    margin-top: 7px;
+    /* border: 1px solid rebeccapurple; */
 }
 
 .order-cart-cattage-name {
+    width: 160px;
+    overflow: hidden;
     font-size: 17px;
     padding: 2px 0;
     margin-top: 7px;
 }
 
-.order-status {
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    width: 120px;
-    text-align: center;
-    text-transform: capitalize;
-}
 .order-card-body-mini{
     display: none;
 }
 
-@media (max-width: 414px) {
+/* @media only screen and (max-width: 576px) {
     .order-card {
         border: 1px solid silver;
         padding: 10px 15px;
@@ -77,13 +65,4 @@
         padding: 2px 0;
         margin-top: 7px;
     }
-
-    .order-status {
-        border-radius: 8px;
-        color: white;
-        cursor: pointer;
-        width: 120px;
-        text-align: center;
-        text-transform: capitalize;
-    }
-}
+}  */

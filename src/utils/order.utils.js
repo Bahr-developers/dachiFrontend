@@ -21,5 +21,19 @@ export const OrderUtils = {
         }
     })
         return data
-    }
+    },
+    editOrder: async ({orderId, orderStatus, status}) => {
+    const {data} = await custimAxios.patch(`order/update/${orderId}`, {
+        orderId,
+        status,
+        orderStatus
+    }, 
+    {
+    headers: {
+        "accept-language": localStorage.getItem("language"),
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    },
+    })
+    return data
+    },
 }
