@@ -65,6 +65,14 @@ export const cottageUtils = {
     );
     return data;
   },
+  getCottageRecommended: async (id) => {
+    const {data} = await custimAxios.get(`cottage/suitable/${id}`, {
+      headers: {
+        "accept-language": localStorage.getItem("language"),
+      },
+    })
+    return data
+  },
   postCottage: async ({
     comforts,
     cottageType,

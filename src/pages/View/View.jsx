@@ -9,13 +9,13 @@ import { useContext } from "react";
 
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
-import Dacha from "../../components/Dacha/Dacha";
 import { LanguageContext } from "../../helper/languageContext";
 import { ViewLanguage, ViewPageLanguage } from "../../configs/language";
 import ViewComforts from "./ViewComforts";
 import ViewStars from "./ViewStars";
 import VIewSwiper from "./VIewSwiper";
 import ViewPhone from "./ViewPhone";
+import RecommenedDachi from "./RecommenedDachi";
 
 const View = () => {
   const { id } = useParams();
@@ -75,7 +75,7 @@ const View = () => {
         <MiniNaw />
       </div>
       <div className="mt-5">
-        <Dacha />
+        <RecommenedDachi />
       </div>
     </>
   );
