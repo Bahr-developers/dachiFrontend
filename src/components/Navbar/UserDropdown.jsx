@@ -2,7 +2,7 @@ import { IMG_BASE_URL } from "../../constants/img.constants";
 import UserMenu from "../../assets/images/user-menu.svg";
 import UserModal from "../../assets/images/user-modal.svg";
 import RedGoOut from "../../assets/images/red-go-out.svg";
-import { NavberLinks } from "../../configs/language";
+import { NavberLinks, ProfilePageLanguage } from "../../configs/language";
 import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ import { ALL_DATA } from "../../Query/get_all";
 
 const UserDropdown = ({ logoutBtn, registered }) => {
   const user = ALL_DATA.useSingleUser()?.data;
+  const order = ALL_DATA.useOrder()
 
   const accessToken = localStorage.getItem("accessToken");
 
@@ -58,6 +59,12 @@ const UserDropdown = ({ logoutBtn, registered }) => {
           className="um-text text-decoration-none mt-2 d-block"
         >
           {NavberLinks[languageChange].services}
+        </Link>
+        <Link
+          to="/home/profile/order"
+          className={order?.data?.length ? "um-text text-decoration-none mt-2 d-block": "d-none"}
+        >
+          {ProfilePageLanguage.order[languageChange]}
         </Link>
 
         <hr />

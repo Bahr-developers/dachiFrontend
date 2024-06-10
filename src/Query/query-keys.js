@@ -18,4 +18,5 @@ export const QUERY_KEYS = {
   tariff: "tariffs",
   cottageUserAllId: "cottageUserIdAll",
   userCottageUser: "UserCottageUser",
+  order: "orders"
 };

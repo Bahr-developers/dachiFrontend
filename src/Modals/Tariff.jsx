@@ -1,22 +1,21 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useContext, useRef, useState } from "react";
-import { TariffUtils } from "../utils/tariff.utilis";
 import { QUERY_KEYS } from "../Query/query-keys";
 import toastify from "../utils/toastify";
 import { ALL_DATA } from "../Query/get_all";
 import { TariffModalLanguage, TariffPageLanguage } from "../configs/language";
 import { LanguageContext } from "../helper/languageContext";
 import { RiCloseLargeLine } from "react-icons/ri";
+import { OrderUtils } from "../utils/order.utils";
 
 const Tariff = (props) => {
   const userCottage = ALL_DATA.useCottageUserId();
-  const singleUser = ALL_DATA.useSingleUser()?.data;
   const [isOpen, setIsOpen] = useState(false);
   const activete = useRef();
   const queryClient = useQueryClient();
 
   const addCottage = useMutation({
-    mutationFn: TariffUtils.activeTariff,
+    mutationFn: OrderUtils.activeOrder,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.tariff] });
       toastify.successMessage(TariffModalLanguage[languageChange]);
@@ -33,7 +32,6 @@ const Tariff = (props) => {
     addCottage.mutate({
       cottageId: e.target.tariff_cottage.value,
       tariffId: props.tariff.id,
-      assignedBy: singleUser.id,
     });
     activete.current.classList.remove("disabled");
     console.log(addCottage.variables);

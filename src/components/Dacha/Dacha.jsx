@@ -10,7 +10,7 @@ import { LanguageContext } from "../../helper/languageContext";
 const Dacha = () => {
   const { languageChange } = useContext(LanguageContext);
   const cottages = ALL_DATA.useCottage()?.data
-  const [count, setCount] = useState(6)
+  const [count, setCount] = useState(7)
   const cottage = cottages?.slice(0,count)
   return (
     <div className="container">
@@ -33,7 +33,7 @@ const Dacha = () => {
               })}
         </div>
       </div>
-      <button className={count<cottages?.length+1 ? "d-block show-more":"d-none"} onClick={()=>setCount(count+6)}>{showMoreInfo[languageChange]}</button>
+      <button className={count<=cottages?.length+1 ? "d-block show-more":"d-none"} onClick={()=>setCount(count+6)}>{showMoreInfo[languageChange]}</button>
     </div>
   );
 };
