@@ -65,8 +65,16 @@ export const cottageUtils = {
     );
     return data;
   },
-  getCottageRecommended: async (id) => {
+  getCottageTariffTop: async (id) => {
     const {data} = await custimAxios.get(`cottage/suitable/${id}`, {
+      headers: {
+        "accept-language": localStorage.getItem("language"),
+      },
+    })
+    return data
+  },
+  getCottageRecommended: async () => {
+    const {data} = await custimAxios.get('cottage/recommended',{
       headers: {
         "accept-language": localStorage.getItem("language"),
       },

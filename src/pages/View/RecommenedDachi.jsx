@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 const RecommenedDachi = () => {
     const { languageChange } = useContext(LanguageContext);
     const params = useParams()
-    const cottage = ALL_DATA.useCottageRecommended(params?.id)?.data
+    const cottage = ALL_DATA.useCottageTariffTop(params?.id)?.data
     console.log(cottage);
     return (
             <div className="container">
