@@ -10,7 +10,7 @@ import { LanguageContext } from "../../helper/languageContext";
 const Dacha = () => {
   const { languageChange } = useContext(LanguageContext);
   const cottages = ALL_DATA.useCottageRecommended()?.data
-  const [count, setCount] = useState(7)
+  const [count, setCount] = useState(6)
   const cottage = cottages?.slice(0,count)
   return (
     <div className="container">
