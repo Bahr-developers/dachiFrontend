@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import Logo from "../../assets/images/logo.svg";
+import Logo from "../../../public/dachaol.svg";
 import Menu from "../../assets/images/menu.svg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useContext, useRef, useState } from "react";

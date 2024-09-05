@@ -51,8 +51,22 @@ export const cottageUtils = {
     return data;
   },
   getCottageFilter: async ({ type, place, price }) => {
+    let queryStr = [];
+
+    if (type) {
+      queryStr.push(`type=${type}`);
+    }
+
+    if (place) {
+      queryStr.push(`place=${place}`);
+    }
+
+    if (price) {
+      queryStr.push(`price=${price}`);
+    }
+
     const { data } = await custimAxios.get(
-      `/cottage/filter/?type=${type}&place=${place}&price=${price}`,
+      `/cottage/filter/?${queryStr.join("&")}`,
       {
         type: type,
         place: place,
@@ -66,20 +80,20 @@ export const cottageUtils = {
     return data;
   },
   getCottageTariffTop: async (id) => {
-    const {data} = await custimAxios.get(`cottage/suitable/${id}`, {
+    const { data } = await custimAxios.get(`cottage/suitable/${id}`, {
       headers: {
         "accept-language": localStorage.getItem("language"),
       },
-    })
-    return data
+    });
+    return data;
   },
   getCottageRecommended: async () => {
-    const {data} = await custimAxios.get('cottage/recommended',{
+    const { data } = await custimAxios.get("cottage/recommended", {
       headers: {
         "accept-language": localStorage.getItem("language"),
       },
-    })
-    return data
+    });
+    return data;
   },
   postCottage: async ({
     comforts,
