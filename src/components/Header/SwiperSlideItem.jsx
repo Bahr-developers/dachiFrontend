@@ -5,20 +5,21 @@ import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 
 const SwiperSlideItem = ({ el }) => {
-  const { languageChange } = useContext(LanguageContext);
+  const { languageChange } = useContext(LanguageContext)
+  
   return (
     <div className="wrap-ads">
       <img
         src={`${IMG_BASE_URL}${
-          el.images.find((mainIm) => mainIm.isMainImage === true).image
+          el.cottage.images.find((mainIm) => mainIm.isMainImage === true).image
         }`}
         alt="bgimg"
         className="bg-img h-100"
       />
       <div className="info-card">
-        <h1 className="oswald header-text"> {el.name} </h1>
-        <h2 className="oswald header-num">${el.price}</h2>
-        <Link to={`/home/view/${el.id}`} className="header-btn">
+        <h1 className="oswald header-text"> {el.cottage.name} </h1>
+        <h2 className="oswald header-num">${el.cottage.price}</h2>
+        <Link to={`/home/view/${el.cottage.id}`} className="header-btn">
           {HeaderLang[languageChange].btn}
         </Link>
       </div>

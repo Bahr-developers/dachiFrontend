@@ -8,10 +8,13 @@ import { useContext, useState } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 
 const Dacha = () => {
+  const [count, setCount] = useState(6)
   const { languageChange } = useContext(LanguageContext);
   const cottages = ALL_DATA.useCottageRecommended()?.data
-  const [count, setCount] = useState(6)
+  
   const cottage = cottages?.slice(0,count)
+  console.log(cottage);
+  
   return (
     <div className="container">
       <div className="dacha">
@@ -20,16 +23,16 @@ const Dacha = () => {
         <div className="dacha-cards">
           {cottage?.length &&
             cottage
-              .filter((el) => el.cottageStatus === "confirmed")
+              .filter((el) => el.cottage.cottageStatus === "confirmed")
               .map((e) => {
-                return <DachaCard key={e.id} cottage={e} />;
+                return <DachaCard key={e.cottage.id} cottage={e.cottage} />;
               })}
 
           {cottage?.length &&
             cottage
-              .filter((el) => el.cottageStatus === "confirmed")
+              .filter((el) => el.cottage.cottageStatus === "confirmed")
               .map((e) => {
-                return <DachaMiniCard key={e.id} cottage={e} />;
+                return <DachaMiniCard key={e.cottage.id} cottage={e.cottage} />;
               })}
         </div>
       </div>

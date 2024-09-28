@@ -11,7 +11,7 @@ export const ServiceUtils = {
     return data;
   },
   getServiceId: async (id) => {
-    const {data} = await custimAxios.get(`services/single/${id}`, {
+    const {data} = await custimAxios.get(`services/${id}`, {
       headers: {
         "accept-language": localStorage.getItem("language"),
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,

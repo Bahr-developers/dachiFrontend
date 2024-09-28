@@ -7,7 +7,7 @@ export const userUtils = {
   },
   getSingleUser: async () => {
     if (!localStorage.getItem("accessToken")) return null;
-    const { data } = await custimAxios.get("/user/single", {
+    const { data } = await custimAxios.get("/user/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
