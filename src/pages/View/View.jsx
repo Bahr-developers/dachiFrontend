@@ -5,7 +5,7 @@ import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import Loader from "../../components/Loader/Loader";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
@@ -16,9 +16,11 @@ import ViewStars from "./ViewStars";
 import VIewSwiper from "./VIewSwiper";
 import ViewPhone from "./ViewPhone";
 import RecommenedDachi from "./RecommenedDachi";
+import { FaArrowUp } from "react-icons/fa6";
 
 const View = () => {
   const { id } = useParams();
+  const [isTop, setIsTop] = useState(false)
 
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === id);
@@ -30,6 +32,28 @@ const View = () => {
       childImage.push(e);
     }
   });
+
+  const visibleTopBotton = () => {
+    if(window.scrollY > 250){
+      setIsTop(true)
+    }else{
+      setIsTop(false)
+    }
+  }
+
+  
+
+  const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', visibleTopBotton)
+
+    return () => {
+      window.removeEventListener('scroll', visibleTopBotton)
+    }
+  }, [])  
 
   // get Language
   const { languageChange } = useContext(LanguageContext);
@@ -44,8 +68,8 @@ const View = () => {
         <link rel="canonical" href="/view" />
       </Helmet>
 
-      <div className="viewWrapper mb-2">
-        <div className="container">
+      <div className="viewWrapper mb-2 position-relative">
+        <div className="container position-relative">
           <BreacdCrumbs />
           <div className="view">
             <h1 className="view-name">{cottageView?.name}</h1>              
@@ -76,6 +100,9 @@ const View = () => {
       </div>
       <div className="mt-5">
         <RecommenedDachi />
+      </div>
+      <div className="arrowTopUp">
+        {isTop && <button onClick={scrollToTop} className="button-top-up"><FaArrowUp size={25}/> </button>}
       </div>
     </>
   );
