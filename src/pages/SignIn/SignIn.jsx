@@ -153,7 +153,11 @@ const SignIn = () => {
                   )}
                 </button>
               </div>
-              <button type="submit" className="signin-submit mt-5">
+              <div className="d-flex align-items-center gap-2">
+                <input type="checkbox" name="iagree" className="" />
+                <p className="text-white mt-1 pt-3">Men sizning shartlaringizga roziman</p>
+              </div>
+              <button type="submit" className="signin-submit mt-3">
                 {signInLanguage.enter[languageChange]}
               </button>
             </form>

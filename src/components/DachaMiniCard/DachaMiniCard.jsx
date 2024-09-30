@@ -1,6 +1,5 @@
 import "./DachaMiniCard.css";
 import { Link, useNavigate } from "react-router-dom";
-import { BASE_URL_SERVER } from "../../constants/server.constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../../Query/query-keys";
 
@@ -8,6 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { IoMdHeart } from "react-icons/io";
+import { IMG_BASE_URL } from "../../constants/img.constants";
 
 const DachaMiniCard = (props) => {
   const mainImg = props.cottage.images.find(
@@ -15,6 +15,7 @@ const DachaMiniCard = (props) => {
   ).image;
 
   const queryClient = useQueryClient();
+  
 
   const accessToken = localStorage.getItem("accessToken");
   const refreshToken = localStorage.getItem("refreshToken");
@@ -49,7 +50,7 @@ const DachaMiniCard = (props) => {
           <LazyLoadImage
             className="view-img"
             effect="blur"
-            src={`${BASE_URL_SERVER}${mainImg}`}
+            src={`${IMG_BASE_URL}${mainImg}`}
             alt="dacha"
           />
           <p
