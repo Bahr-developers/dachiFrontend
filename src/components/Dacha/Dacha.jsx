@@ -13,7 +13,6 @@ const Dacha = () => {
   const cottages = ALL_DATA.useCottageRecommended()?.data
   
   const cottage = cottages?.slice(0,count)
-  console.log(cottage);
   
   return (
     <div className="container">

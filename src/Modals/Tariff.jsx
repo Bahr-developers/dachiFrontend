@@ -34,7 +34,6 @@ const Tariff = (props) => {
       tariffId: props.tariff.id,
     });
     activete.current.classList.remove("disabled");
-    console.log(addCottage.variables);
   };
 
   const closeModalTarifOutline = (e) => {

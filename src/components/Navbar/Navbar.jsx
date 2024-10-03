@@ -96,6 +96,7 @@ const Navbar = () => {
               </span>
             </Link>
 
+           
             <div className="d-flex align-items-center">
               <Notification />
             </div>
