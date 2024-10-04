@@ -33,7 +33,7 @@ const User = () => {
   const userData = ALL_DATA.useSingleUser();
   const user = JSON.parse(localStorage.getItem("user"));
   const userImg = userData?.data?.image;
-  const fovarite = JSON.parse(localStorage.getItem("liked"));
+  // const fovarite = JSON.parse(localStorage.getItem("liked"));
   const ismainImage = useRef(null);
   const saveData = useRef(null);
   const editImage = useRef(null);
@@ -66,9 +66,11 @@ const User = () => {
       email: e.target.email.value || "",
       name: e.target.name.value || "",
       image: e.target.userImage.files[0],
-      favoriteCottages: fovarite || [],
+
+      // favoriteCottages: fovarite || [],
     });
   };
+  console.log(userEdit, 'efv');    
 
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0]);

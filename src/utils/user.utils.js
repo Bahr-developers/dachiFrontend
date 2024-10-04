@@ -23,15 +23,18 @@ export const userUtils = {
     const { data } = await custimAxios.get(`user/user-device/${userId}`);
     return data;
   },
-  editUser: async ({ id, phone, email, name, image, favoriteCottages }) => {
+  editUser: async ({ id, phone, email, name, image }) => {
     const formData = new FormData();
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("name", name);
     formData.append("image", image);
-    favoriteCottages.forEach((cottage) =>
-      formData.append("favoriteCottages", cottage)
-    );
+
+    // User fovarite cottage oldin bor edi
+
+    // favoriteCottages.forEach((cottage) =>
+    //   formData.append("favoriteCottages", cottage)
+    // );
     const { data } = await custimAxios.patch(`user/edit/${id}`, formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
