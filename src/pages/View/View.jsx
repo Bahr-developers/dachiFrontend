@@ -24,15 +24,12 @@ const View = () => {
 
   const cottage = ALL_DATA.useCottage();
   const cottageView = cottage?.data?.find((e) => e.id === id);
-
   const childImage = [];
-
   cottageView?.images?.forEach((e) => {
     if (!e.isMainImage) {
       childImage.push(e);
     }
   });
-
   const visibleTopBotton = () => {
     if(window.scrollY > 250){
       setIsTop(true)
@@ -40,13 +37,9 @@ const View = () => {
       setIsTop(false)
     }
   }
-
-  
-
   const scrollToTop = () => {
     window.scrollTo({top: 0, behavior: 'smooth'})
   }
-
   useEffect(() => {
     window.addEventListener('scroll', visibleTopBotton)
 
@@ -74,7 +67,6 @@ const View = () => {
           <div className="view">
             <h1 className="view-name">{cottageView?.name}</h1>              
             <VIewSwiper cottageView={cottageView} />
-            <ViewPhone cottageView={cottageView} />
             <div className="view-main">
               <h1 className="view-name">{cottageView?.name}</h1>
 
@@ -93,6 +85,7 @@ const View = () => {
                 {ViewPageLanguage.allComfort[languageChange]}
               </p>
               <ViewComforts cottageView={cottageView} />
+          <ViewPhone cottageView={cottageView} />
             </div>
           </div>
         </div>

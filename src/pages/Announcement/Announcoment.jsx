@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 
 function Announcoment() {
-  const userCottage = ALL_DATA.useCottageUserId();
+  const userCottage = ALL_DATA.useCottageUser();
 
   const { languageChange } = useContext(LanguageContext);
 

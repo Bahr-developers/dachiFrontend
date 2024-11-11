@@ -8,8 +8,10 @@ import { LanguageContext } from "../helper/languageContext";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { OrderUtils } from "../utils/order.utils";
 
+
+
 const Tariff = (props) => {
-  const userCottage = ALL_DATA.useCottageUserId();
+  const userCottage = ALL_DATA.useCottageUser();
   const [isOpen, setIsOpen] = useState(false);
   const activete = useRef();
   const queryClient = useQueryClient();
